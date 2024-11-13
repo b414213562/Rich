@@ -1,0 +1,35 @@
+Still to do:
+[DONE] Be able to remove circles that are missing
+[DONE] Lay down circles of maximum value on your last /loc location
+[DONE]  changes colors of circles
+[PASS] mark a specific dig site with detected value
+[DONE]  one option will be to remove it from the list
+[DONE] Reset all of this when the round ends
+
+[DONE to 28] Maybe shrink cave-claw effect down to 25 meters?
+Add option to not clear all circles in an uncommon area
+
+[DONE] Move EVENTSTART into Rich_Stats, at the server level.
+
+2024-11-12:
+    [DONE] Move the Reset button to the map
+    [DONE] Add a /loc button to map
+
+    [DONE] Talyrion1003: unfortunately "rich" is broken in german.. since the pickaxes got renamed... (and the plugin is dependent on the name of the item)
+    [DONE] Barter items need categories
+    [DONE] Pull in LOC_MESSAGES from Festival Buddy II?
+
+    What's up with LONGESTROUND maxing out at 3600?
+
+    [DONE] UI Redesign:
+        [DONE] Move the reset button
+        [DONE] Add /loc button
+        [DONE] Add results label
+        [DONE] Move results buttons down
+        Incorporate Egarthur's fix
+        Fix location of Map button on main window.
+
+Need localization work on the stats file. EU numbers get saved like "1,00000".
+
+Effect:
+    Buried Treasure Field
