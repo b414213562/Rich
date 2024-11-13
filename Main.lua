@@ -25,13 +25,14 @@ import "GaluhadPlugins.Rich.Commands";
 import "GaluhadPlugins.Rich.Barter";
 import "GaluhadPlugins.Rich.BarterWin";
 import "GaluhadPlugins.Rich.GeneralFunctions";
+import "GaluhadPlugins.Rich.VindarPatch";
 
 
 function saveData()
 
 	-- Store the settings table.
-	Turbine.PluginData.Save(Turbine.DataScope.Character, "Rich_Settings", SETTINGS);
-	Turbine.PluginData.Save(Turbine.DataScope.Server, "Rich_Stats", STATS);
+	PatchDataSave(Turbine.DataScope.Character, "Rich_Settings", SETTINGS);
+	PatchDataSave(Turbine.DataScope.Server, "Rich_Stats", STATS);
 
 end
 
@@ -43,12 +44,12 @@ function loadData()
 
 	-- Load the settings
 	function GetSavedSettings()
-		SavedSettings = Turbine.PluginData.Load(Turbine.DataScope.Character, "Rich_Settings");
+		SavedSettings = PatchDataLoad(Turbine.DataScope.Character, "Rich_Settings");
 	end
 
 	if pcall(GetSavedSettings) then
 		-- Loaded without error
-		SavedSettings = Turbine.PluginData.Load(Turbine.DataScope.Character, "Rich_Settings");
+		SavedSettings = PatchDataLoad(Turbine.DataScope.Character, "Rich_Settings");
 	else
 		-- Loaded with errors
 		SavedSettings = nil;
@@ -84,12 +85,12 @@ function loadData()
 
 	-- Load the settings
 	function GetSavedStats()
-		SavedStats = Turbine.PluginData.Load(Turbine.DataScope.Server, "Rich_Stats");
+		SavedStats = PatchDataLoad(Turbine.DataScope.Server, "Rich_Stats");
 	end
 
 	if pcall(GetSavedStats) then
 		-- Loaded without error
-		SavedStats = Turbine.PluginData.Load(Turbine.DataScope.Server, "Rich_Stats");
+		SavedStats = PatchDataLoad(Turbine.DataScope.Server, "Rich_Stats");
 	else
 		-- Loaded with errors
 		SavedStats = nil;
