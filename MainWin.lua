@@ -45,6 +45,17 @@ function DrawMainWindow()
 		wStatWinParent:SetVisible(true);
 	end
 
+    btnMap = Turbine.UI.Lotro.Button();
+    btnMap:SetParent(wMainWinParent);
+    btnMap:SetWidth(70);
+    btnMap:SetPosition(
+        wMainWinParent:GetWidth() / 2 - btnMap:GetWidth() / 2,
+        tempHeight - 30);
+    btnMap:SetText(_LANG.MAP[CLIENTLANG]);
+
+    btnMap.Click = function(sender, args)
+        MapSetVisible(not SETTINGS.MAPWIN.VISIBLE);
+    end
 
 	-- Labels ---------------------------------------------------------
 	lbltitleDuration = Turbine.UI.Label();

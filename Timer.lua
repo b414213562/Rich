@@ -4,6 +4,9 @@ PreviousUpdate = 0;
 function SetStartRound()
 	SETTINGS.EVENTSTART = Turbine.Engine.GetLocalTime();
 	ROUNDACTIVE = true;
+
+    -- Restore any hidden or marked dig-sites.
+    MapWinRoundReset();
 end
 
 

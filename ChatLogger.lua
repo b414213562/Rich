@@ -55,6 +55,7 @@ end
 
 function FilterStandard(cMessage)
 -- Filters here for use with the Standard channel.
+    MapHandleStandardChatMessage(cMessage);
 
 	if string.find(cMessage,_LANG.NEWROUND[CLIENTLANG]) ~= nil then
 		SetStartRound();

@@ -23,6 +23,16 @@ _LANG =
 	["ACQUIRED"] = 		{["ENGLISH"] = "You have acquired";			["FRENCH"] = "Vous avez obtenu";			["GERMAN"] = "Erhalten:";					["RUSSIAN"] = "You have acquired";};
 	["BARTERITEMS"] = 	{["ENGLISH"] = "Barter Items";				["FRENCH"] = "Objets échangeables";				["GERMAN"] = "Händler-Gegenstände";			["RUSSIAN"] = "Barter Items";};
 	["TREASUREHUNT"] =	{["ENGLISH"] = "Treasure Hunt";				["FRENCH"] = "La chasse au trésor";				["GERMAN"] = "Schatzsuche";					["RUSSIAN"] = "Treasure Hunt";};
+    ["MAP"] = 			{["ENGLISH"] = "Map";						["FRENCH"] = "Map";							["GERMAN"] = "Map";							["RUSSIAN"] = "Map";};
+
+    ["UNCOMMON"] =      {["ENGLISH"] = "Small"; ["FRENCH"] = "Petite"; ["GERMAN"] = "Kleiner"; };
+    ["RARE"] =          {["ENGLISH"] = "Medium"; ["FRENCH"] = "moyenne"; ["GERMAN"] = "Normaler"; };
+    ["INCOMPARABLE"] =  {["ENGLISH"] = "Large"; ["FRENCH"] = "Grande"; ["GERMAN"] = "Großer"; };
+    ["DETECT_OFFSET"] = {["ENGLISH"] = "Detect Location"; ["GERMAN"] = "Standort ermitteln"; ["FRENCH"] = "Détecter l'emplacement"; };
+    ["LOC_COMMAND"] =   {["ENGLISH"] = "/loc"; ["GERMAN"] = "/pos"; ["FRENCH"] = "/emp"; };
+    ["DEPLOY_CAVE_CLAW"] = {["ENGLISH"] = "Mark Cave-claw"; };
+    ["CAVE_CLAW_RESULT"] = {["ENGLISH"] = "Cave-claw result:"; };
+    ["RESET_MAP"] = {["ENGLISH"] = "Reset Map"; };
 
 
 	["CAVECLAW"] = 	{ -- STANDARD

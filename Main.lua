@@ -17,6 +17,8 @@ import "GaluhadPlugins.Rich.Tables";
 import "GaluhadPlugins.Rich.OnScreen";
 import "GaluhadPlugins.Rich.Timer";
 import "GaluhadPlugins.Rich.ChatLogger";
+import "GaluhadPlugins.Rich.MapButton";
+import "GaluhadPlugins.Rich.MapWin";
 import "GaluhadPlugins.Rich.MainWin";
 import "GaluhadPlugins.Rich.Stats";
 import "GaluhadPlugins.Rich.Commands";
@@ -135,6 +137,7 @@ end
 
 -- Initiate load sequence
 loadData();
+DrawMapWin();
 DrawWindows();
 InitiateChatLogger();
 RegisterCommands();
