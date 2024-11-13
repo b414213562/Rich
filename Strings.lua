@@ -3,7 +3,7 @@
 -- French translations provided by Galphoglas
 
 
--- E.G -- wBListParent:SetText(_LANG.BListWindowTitle[SETTINGS.LANGUAGE]);
+-- E.G -- wBListParent:SetText(_LANG.BListWindowTitle[CLIENTLANG]);
 
 _LANG =
 	{
@@ -23,90 +23,100 @@ _LANG =
 	["ACQUIRED"] = 		{["ENGLISH"] = "You have acquired";			["FRENCH"] = "Vous avez obtenu";			["GERMAN"] = "Erhalten:";					["RUSSIAN"] = "You have acquired";};
 	["BARTERITEMS"] = 	{["ENGLISH"] = "Barter Items";				["FRENCH"] = "Objets échangeables";				["GERMAN"] = "Händler-Gegenstände";			["RUSSIAN"] = "Barter Items";};
 	["TREASUREHUNT"] =	{["ENGLISH"] = "Treasure Hunt";				["FRENCH"] = "La chasse au trésor";				["GERMAN"] = "Schatzsuche";					["RUSSIAN"] = "Treasure Hunt";};
+    ["MAP"] = 			{["ENGLISH"] = "Map";						["FRENCH"] = "Map";							["GERMAN"] = "Map";							["RUSSIAN"] = "Map";};
+
+    ["UNCOMMON"] =      {["ENGLISH"] = "Small"; ["FRENCH"] = "Petite"; ["GERMAN"] = "Kleiner"; };
+    ["RARE"] =          {["ENGLISH"] = "Medium"; ["FRENCH"] = "moyenne"; ["GERMAN"] = "Normaler"; };
+    ["INCOMPARABLE"] =  {["ENGLISH"] = "Large"; ["FRENCH"] = "Grande"; ["GERMAN"] = "Großer"; };
+    ["DETECT_OFFSET"] = {["ENGLISH"] = "Detect Location"; ["GERMAN"] = "Standort ermitteln"; ["FRENCH"] = "Détecter l'emplacement"; };
+    ["LOC_COMMAND"] =   {["ENGLISH"] = "/loc"; ["GERMAN"] = "/pos"; ["FRENCH"] = "/emp"; };
+    ["DEPLOY_CAVE_CLAW"] = {["ENGLISH"] = "Mark Cave-claw"; };
+    ["CAVE_CLAW_RESULT"] = {["ENGLISH"] = "Cave-claw result:"; };
+    ["RESET_MAP"] = {["ENGLISH"] = "Reset Map"; };
 
 
 	["CAVECLAW"] = 	{ -- STANDARD
 		["ENGLISH"] = "Trained Cave-claw Cage";
-		["FRENCH"] = "Trained Cave-claw Cage";
+		["FRENCH"] = "Cage de grifferoche entraîné";
 		["GERMAN"] = "Käfig mit abgerichteter Höhlenklaue";
-		["RUSSIAN"] = "Trained Cave-claw Cage";
+		["RUSSIAN"] = "Клетка с дрессированным когтероем";
 		};
 
 	["DOWSING"] = 	{ -- STANDARD
 		["ENGLISH"] = "Dowsing Gem";
-		["FRENCH"] = "Dowsing Gem";
+		["FRENCH"] = "Gemme de sourcier";
 		["GERMAN"] = "Wünschelgänger-Edelstein";
-		["RUSSIAN"] = "Dowsing Gem";
+		["RUSSIAN"] = "Поисковый кристалл";
 		};
 
 	["PICK"] = 	{ -- STANDARD
 		["ENGLISH"] = "Treasure-hunter's Pick";
-		["FRENCH"] = "Treasure-hunter's Pick";
+		["FRENCH"] = "Pioche de chasseur de trésors";
 		["GERMAN"] = "Schatzsucher-Spitzhacke";
-		["RUSSIAN"] = "Treasure-hunter's Pick";
+		["RUSSIAN"] = "Кирка охотника за сокровищами";
 		};
 
 	["TOKENS"] = 	{ -- STANDARD
 		["ENGLISH"] = "Buried Treasure Token";
-		["FRENCH"] = "Jetons du Trésor enfoui";
+		["FRENCH"] = "Jeton du Trésor enfoui";
 		["GERMAN"] = "Münze der vergrabenen Schätze";
-		["RUSSIAN"] = "Buried Treasure Token";
+		["RUSSIAN"] = "Жетон поля сокровищ";
 		};
 
 	["SMALLCACHE"] = 	{ -- STANDARD
 		["ENGLISH"] = "Small Treasure Cache";
 		["FRENCH"] = "Petite cachette de trésor";
 		["GERMAN"] = "Kleiner Schatzspeicher";
-		["RUSSIAN"] = "Small Treasure Cache";
+		["RUSSIAN"] = "Маленький сундук с сокровищами";
 		};
 
 	["MEDCACHE"] = 	{ -- STANDARD
 		["ENGLISH"] = "Medium Treasure Cache";
 		["FRENCH"] = "Cachette de trésor moyenne";
 		["GERMAN"] = "Normaler Schatzspeicher";
-		["RUSSIAN"] = "Medium Treasure Cache";
+		["RUSSIAN"] = "Средний сундук с сокровищами";
 		};
 
 	["LARGECACHE"] = 	{ -- STANDARD
 		["ENGLISH"] = "Large Treasure Cache";
 		["FRENCH"] = "Grande cachette de trésor";
 		["GERMAN"] = "Großer Schatzspeicher";
-		["RUSSIAN"] = "Large Treasure Cache";
+		["RUSSIAN"] = "Большой сундук с сокровищами";
 		};
 
 	["HUGECACHE"] = 	{ -- STANDARD
 		["ENGLISH"] = "Huge Treasure Cache";
 		["FRENCH"] = "Enorme cachette de trésor";
 		["GERMAN"] = "Riesiger Schatzspeicher";
-		["RUSSIAN"] = "Huge Treasure Cache";
+		["RUSSIAN"] = "Огромный сундук с сокровищами";
 		};
 
 	["COMPTREASUREHUNT"] = 	{ -- QUEST
 		["ENGLISH"] = "Treasure Hunt";
 		["FRENCH"] = "La chasse au trésor";
 		["GERMAN"] = "Schatzsuche";
-		["RUSSIAN"] = "Treasure Hunt";
+		["RUSSIAN"] = "Охота за сокровищами";
 		};
 
 	["COMPBERRIES"] = 	{ -- QUEST
 		["ENGLISH"] = "Berries";
 		["FRENCH"] = "Baies";
 		["GERMAN"] = "Beeren";
-		["RUSSIAN"] = "Berries";
+		["RUSSIAN"] = "Ягоды";
 		};
 
 	["NEWTREASUREHUNT"] = 	{ -- QUEST
 		["ENGLISH"] = "New Quest: Treasure Hunt";
 		["FRENCH"] = "Nouvelle quête : La chasse au trésor";
 		["GERMAN"] = "Neue Aufgabe: Schatzsuche";
-		["RUSSIAN"] = "New Quest: Treasure Hunt";
+		["RUSSIAN"] = "New Quest: Охота за сокровищами";
 		};
 
 	["NEWBERRIES"] = 	{ -- QUEST
 		["ENGLISH"] = "New Quest: Berries";
 		["FRENCH"] = "Nouvelle quête : Baies";
 		["GERMAN"] = "Neue Aufgabe: Beeren";
-		["RUSSIAN"] = "New Quest: Berries";
+		["RUSSIAN"] = "New Quest: Ягоды";
 		};
 
 	["NEWROUND"] = 	{ -- STANDARD
@@ -125,9 +135,9 @@ _LANG =
 
 	["BERRIES"] = { -- QUEST
 		["ENGLISH"] = "Collected berries";
-		["FRENCH"] = "Baies récupérées";
+		["FRENCH"] = "Baies cueillies";
 		["GERMAN"] = "Anzahl gesammelter Beeren";
-		["RUSSIAN"] = "Collected berries";
+		["RUSSIAN"] = "Собрано ягод";
 		};
 
 
@@ -152,4 +162,24 @@ _LANG =
 		};
 	};
 
-
+function GetString(table, language)
+    if (type(table) == "table") then
+        if (language == nil or
+            language == "") then
+            language = CLIENTLANG;
+        end
+        if (table[language] ~= nil) then
+            return table[language];
+        end
+        if (table["ENGLISH"]) then
+            return table["ENGLISH"];
+        end
+        return "";
+    elseif (type(table) == "nil") then
+        -- Nothing to check
+        return "";
+    else
+        -- Not a table
+        return table;
+    end
+end

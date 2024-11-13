@@ -68,6 +68,7 @@ _STATS = {
 
 
 RESOURCEDIR = "GaluhadPlugins/Rich/Resources/";
+MAPDIR = RESOURCEDIR .. "/Map/";
 _IMAGES = {
 
 	["GREY_CAVECLAW"] = RESOURCEDIR .. "CaveClaw.tga";
@@ -81,6 +82,17 @@ _IMAGES = {
 	["MAINBACK"] = RESOURCEDIR .. "Main_Back.tga";
 	["BARTERBACK"] = RESOURCEDIR .. "BarterBack.tga";
 
+    ["LOW_LANDS_RADAR"] = MAPDIR .. "LowLandsRadar.tga";
+    ["MAPPOINT"] = 0x41007F4C; -- red arrow from map and radar ("note_avatar.tga")
+    ["DIGSITE_WHITE"] = MAPDIR .. "DigSiteWhite.tga";
+    ["DIGSITE_WHITE_OPAQUE_50"] = MAPDIR .. "DigSiteWhite_opacity_25.tga";
+    ["DIGSITE_YELLOW"] = MAPDIR .. "DigSiteYellow.tga";
+    ["PREVIEW_CIRCLE"] = MAPDIR .. "TwentyMeter_yellow_opacity_10.tga";
+    ["CAVE_CLAW_CIRCLE"] = MAPDIR .. "TwentyMeter_white_opacity_25.tga";
+    ["CAVE_CLAW_CIRCLE_UNCOMMON"] = MAPDIR .. "TwentyMeter_yellow_opacity_25.tga";
+    ["CAVE_CLAW_CIRCLE_RARE"] = MAPDIR .. "TwentyMeter_purple_opacity_25.tga";
+    ["CAVE_CLAW_CIRCLE_INCOMPARABLE"] = MAPDIR .. "TwentyMeter_cyan_opacity_25.tga";
+    ["CAVE_CLAW_CIRCLE_LEGENDARY"] = MAPDIR .. "TwentyMeter_orange_opacity_25.tga";
 };
 
 
@@ -95,7 +107,6 @@ _QUALITYCOLORS =
 };
 
 
-EVENTSTART = 0;
 QUESTTH = 0;
 QUESTBER = 0;
 ROUNDACTIVE = false;
@@ -139,8 +150,8 @@ end
 -- Default Settings
 DEFAULT_SETTINGS =
 	{
-	["LANGUAGE"] = CLIENTLANG;
 	["MSGCOLOR"] = "FFFFFF";
+    ["EVENTSTART"] = 0;
 
 	["MAINWIN"] =
 		{
@@ -161,6 +172,13 @@ DEFAULT_SETTINGS =
 		["X"] = (SCREENWIDTH/2)-200;
 		["Y"] = SCREENHEIGHT/3;
 		};
+
+    ["MAPWIN"] =
+        {
+        ["VISIBLE"] = false;
+        ["X"] = (SCREENWIDTH/2) - 300;
+        ["Y"] = (SCREENHEIGHT/3) - 100;
+        };
 
 	};
 

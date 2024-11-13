@@ -4,6 +4,10 @@ import "Turbine.Gameplay";
 import "Turbine.UI";
 import "Turbine.UI.Lotro";
 
+-- Libraries..
+import "GaluhadPlugins.Rich.TurbineFiles.CallBack";
+import "GaluhadPlugins.Rich.TurbineFiles.Class";
+
 -- Plugin Imports..
 import "GaluhadPlugins.Rich.Globals";
 import "GaluhadPlugins.Rich.DropDown";
@@ -13,6 +17,8 @@ import "GaluhadPlugins.Rich.Tables";
 import "GaluhadPlugins.Rich.OnScreen";
 import "GaluhadPlugins.Rich.Timer";
 import "GaluhadPlugins.Rich.ChatLogger";
+import "GaluhadPlugins.Rich.MapButton";
+import "GaluhadPlugins.Rich.MapWin";
 import "GaluhadPlugins.Rich.MainWin";
 import "GaluhadPlugins.Rich.Stats";
 import "GaluhadPlugins.Rich.Commands";
@@ -64,6 +70,14 @@ function loadData()
 
 	end
 
+    -- only keep the event start time if it was less than 2 minutes ago:
+    if ((Turbine.Engine.GetLocalTime() - SETTINGS.EVENTSTART) > (60 * 2)) then
+        SETTINGS.EVENTSTART = 0;
+    end
+    if SETTINGS.EVENTSTART > 0 then ROUNDACTIVE = true; end
+
+    -- 2024-11-13 no longer storing LANGUAGE in settings:
+    SETTINGS.LANGUAGE = nil;
 
 	-- STATS ---------------------------------------------------------------------------------------
 	local SavedStats = {};
@@ -123,6 +137,7 @@ end
 
 -- Initiate load sequence
 loadData();
+DrawMapWin();
 DrawWindows();
 InitiateChatLogger();
 RegisterCommands();

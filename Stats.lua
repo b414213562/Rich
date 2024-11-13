@@ -5,7 +5,7 @@ function DrawStatWindow()
 	wStatWinParent = Turbine.UI.Lotro.Window();
 	wStatWinParent:SetSize(600,340);
 	wStatWinParent:SetPosition(SETTINGS.STATWIN.X,SETTINGS.STATWIN.Y);
-	wStatWinParent:SetText(_LANG.STATS[SETTINGS.LANGUAGE]);
+	wStatWinParent:SetText(_LANG.STATS[CLIENTLANG]);
 	wStatWinParent:SetVisible(SETTINGS.STATWIN.VISIBLE);
 
 	Onscreen(wStatWinParent); -- Makes sure the window is still onscreen (perhaps user changed resolution since last playing)
@@ -76,12 +76,12 @@ function DrawStatWindow()
 	for i=0, 2 do
 		_lblStats[0][i]:SetFont(Turbine.UI.Lotro.Font.TrajanPro15);
 		_lblStats[0][i]:SetForeColor(Turbine.UI.Color.Orange);
-		_lblStats[0][i]:SetText(_LANG.STATHEADS[i][SETTINGS.LANGUAGE]);
+		_lblStats[0][i]:SetText(_LANG.STATHEADS[i][CLIENTLANG]);
 	end
 
 	-- Set the row labels
 	for i=0, 9 do
-		_lblStats[i+1][0]:SetText(_LANG.STATLBLS[i][SETTINGS.LANGUAGE]);
+		_lblStats[i+1][0]:SetText(_LANG.STATLBLS[i][CLIENTLANG]);
 	end
 
 	UpdateStats(ddListNames:GetText());

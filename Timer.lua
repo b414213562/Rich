@@ -2,8 +2,11 @@
 PreviousUpdate = 0;
 
 function SetStartRound()
-	EVENTSTART = Turbine.Engine.GetLocalTime();
+	SETTINGS.EVENTSTART = Turbine.Engine.GetLocalTime();
 	ROUNDACTIVE = true;
+
+    -- Restore any hidden or marked dig-sites.
+    MapWinRoundReset();
 end
 
 
@@ -23,7 +26,7 @@ end
 
 function SetEndRound()
 	if ROUNDACTIVE == true then
-		local ROUNDLEN = Turbine.Engine.GetLocalTime() - EVENTSTART; -- length in seconds.
+		local ROUNDLEN = Turbine.Engine.GetLocalTime() - SETTINGS.EVENTSTART; -- length in seconds.
 		STATS[MYNAME].TOTALTIME = STATS[MYNAME].TOTALTIME + ROUNDLEN;
 		STATS[MYNAME].TOTALROUNDS = STATS[MYNAME].TOTALROUNDS + 1;
 
@@ -50,9 +53,9 @@ function UpdateLabels()
     PreviousUpdate = CURTIME;
 
 	if ROUNDACTIVE == true then
-		lblRoundDuration:SetText(FormatTime(CURTIME-EVENTSTART));
+		lblRoundDuration:SetText(FormatTime(CURTIME-SETTINGS.EVENTSTART));
 	else
-		lblRoundDuration:SetText(_LANG.WAITINGROUND[SETTINGS.LANGUAGE]);
+		lblRoundDuration:SetText(_LANG.WAITINGROUND[CLIENTLANG]);
 	end
 
 
@@ -61,7 +64,7 @@ function UpdateLabels()
 		if CURQUESTTIME > 0 then
 			lblCDTH:SetText(FormatTime(CURQUESTTIME));
 		else
-			lblCDTH:SetText(_LANG.QUESTRESET[SETTINGS.LANGUAGE]);
+			lblCDTH:SetText(_LANG.QUESTRESET[CLIENTLANG]);
 		end
 	end
 
@@ -71,7 +74,7 @@ function UpdateLabels()
 		if CURQUESTTIME > 0 then
 			lblCDBERRY:SetText(FormatTime(CURQUESTTIME));
 		else
-			lblCDBERRY:SetText(_LANG.QUESTRESET[SETTINGS.LANGUAGE]);
+			lblCDBERRY:SetText(_LANG.QUESTRESET[CLIENTLANG]);
 		end
 	end
 end

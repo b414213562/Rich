@@ -109,24 +109,6 @@ function GetItemFromID(itemID)
 end
 --Turbine.Shell.WriteLine(GetItemFromID(1879230113):GetItemInfo():GetName()); -- Crumpet
 
-
--- This function gets the client language and returns the string value, as used in string tables.
-function GetClientLanguage()
-
-	local LANGUAGE = 1;
-
-	if Turbine.Engine.GetLanguage() == Turbine.Language.French then
-		LANGUAGE = 2;
-	elseif Turbine.Engine.GetLanguage() == Turbine.Language.German then
-		LANGUAGE = 3;
-	elseif Turbine.Engine.GetLanguage() == Turbine.Language.Russian then
-		LANGUAGE = 4;
-	end
-
-	return LANGUAGE; -- 1=English	2=French	3=German	4=Russian
-end
-
-
 -- This function formats a number with commas
 function comma_value(amount)
   local formatted = amount
@@ -508,4 +490,23 @@ function ClearTable(TABLE)
 	for k,v in pairs(TABLE) do
 		TABLE[k] = nil;
 	end
+end
+
+-- Function to handle parsing a string into a number correctly based on the locale:
+
+-- this will be true if the number is formatted with a 
+-- comma for the decimal place / radix point, false otherwise
+local isEuroFormat=(tonumber("1,000")==1);
+
+-- create a function to automatcially convert in string format to number:
+if (isEuroFormat) then
+    function EuroNormalize(value)
+        if (value == nil) then return 0.0; end
+        return tonumber((string.gsub(value, "%.", ",")));
+    end
+else
+    function EuroNormalize(value)
+        if (value == nil) then return 0.0; end
+        return tonumber((string.gsub(value, ",", ".")));
+    end
 end
