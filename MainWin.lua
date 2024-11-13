@@ -2,7 +2,7 @@
 function DrawMainWindow()
 
 	local tempWidth = 200;
-	local tempHeight = 330;
+	local tempHeight = 345;
 
 	-- Main Parent window to hold all the elements
 	wMainWinParent = Turbine.UI.Lotro.Window();
@@ -16,9 +16,9 @@ function DrawMainWindow()
 	-- Background control to hold the background image
 	wMainBack = Turbine.UI.Control();
 	wMainBack:SetParent(wMainWinParent);
-	wMainBack:SetSize(197,329);
+	wMainBack:SetSize(197,344);
 	wMainBack:SetPosition(2,-5);
-	wMainBack:SetBlendMode(4);
+	wMainBack:SetBlendMode(Turbine.UI.BlendMode.AlphaBlend);
 	wMainBack:SetBackground(_IMAGES.MAINBACK);
 	wMainBack:SetMouseVisible(false);
 
@@ -120,6 +120,11 @@ function DrawMainWindow()
 	qsCaveClaws:SetParent(wMainWinParent);
 	qsCaveClaws:SetPosition(20,200);
 
+	overflowcaveclaws = Turbine.UI.Label();
+	overflowcaveclaws:SetParent(wMainWinParent);
+	overflowcaveclaws:SetSize(32,32);
+	overflowcaveclaws:SetPosition(23, 188);
+	overflowcaveclaws:SetVisible(true);
 
 	dowsing_underlay = Turbine.UI.Control();
 	dowsing_underlay:SetParent(wMainWinParent);
@@ -132,6 +137,11 @@ function DrawMainWindow()
 	qsDowsing:SetParent(wMainWinParent);
 	qsDowsing:SetPosition(60,200);
 
+	overflowDowsing = Turbine.UI.Label();
+	overflowDowsing:SetParent(wMainWinParent);
+	overflowDowsing:SetSize(32,32);
+	overflowDowsing:SetPosition(63, 188);
+	overflowDowsing:SetVisible(true);
 
 	picks_underlay = Turbine.UI.Control();
 	picks_underlay:SetParent(wMainWinParent);
@@ -144,10 +154,23 @@ function DrawMainWindow()
 	qsPicks:SetParent(wMainWinParent);
 	qsPicks:SetPosition(100,200);
 
+	overflowPicks = Turbine.UI.Label();
+	overflowPicks:SetParent(wMainWinParent);
+	overflowPicks:SetSize(32,32);
+	overflowPicks:SetPosition(103, 188);
+	overflowPicks:SetVisible(true);
+
+	tokens_underlay = Turbine.UI.Control();
+	tokens_underlay:SetParent(wMainWinParent);
+	tokens_underlay:SetSize(32,32);
+	tokens_underlay:SetPosition(143, 203);
+	tokens_underlay:SetBackground(_IMAGES.GREY_TOKENS);
+	tokens_underlay:SetMouseVisible(false);
+	tokens_underlay:SetVisible(false);
 
 	cTokens = NewItemInfo(1879206049);
 	cTokens:SetParent(wMainWinParent);
-	cTokens:SetPosition(140,200);
+	cTokens:SetPosition(143, 203);
 
 
 	treasuresmall_underlay = Turbine.UI.Control();
@@ -161,6 +184,11 @@ function DrawMainWindow()
 	qsSmallCache:SetParent(wMainWinParent);
 	qsSmallCache:SetPosition(20,242);
 
+	overflowSmallCache = Turbine.UI.Label();
+	overflowSmallCache:SetParent(wMainWinParent);
+	overflowSmallCache:SetSize(32,32);
+	overflowSmallCache:SetPosition(23, 280);
+	overflowSmallCache:SetVisible(true);
 
 	treasuresmed_underlay = Turbine.UI.Control();
 	treasuresmed_underlay:SetParent(wMainWinParent);
@@ -173,6 +201,11 @@ function DrawMainWindow()
 	qsMedCache:SetParent(wMainWinParent);
 	qsMedCache:SetPosition(60,242);
 
+	overflowMedCache = Turbine.UI.Label();
+	overflowMedCache:SetParent(wMainWinParent);
+	overflowMedCache:SetSize(32,32);
+	overflowMedCache:SetPosition(63, 280);
+	overflowMedCache:SetVisible(true);
 
 	treasureslarge_underlay = Turbine.UI.Control();
 	treasureslarge_underlay:SetParent(wMainWinParent);
@@ -185,6 +218,11 @@ function DrawMainWindow()
 	qsLargeCache:SetParent(wMainWinParent);
 	qsLargeCache:SetPosition(100,242);
 
+	overflowLargeCache = Turbine.UI.Label();
+	overflowLargeCache:SetParent(wMainWinParent);
+	overflowLargeCache:SetSize(32,32);
+	overflowLargeCache:SetPosition(103, 280);
+	overflowLargeCache:SetVisible(true);
 
 	treasureshuge_underlay = Turbine.UI.Control();
 	treasureshuge_underlay:SetParent(wMainWinParent);
@@ -197,6 +235,11 @@ function DrawMainWindow()
 	qsHugeCache:SetParent(wMainWinParent);
 	qsHugeCache:SetPosition(140,242);
 
+	overflowHugeCache = Turbine.UI.Label();
+	overflowHugeCache:SetParent(wMainWinParent);
+	overflowHugeCache:SetSize(32,32);
+	overflowHugeCache:SetPosition(143, 280);
+	overflowHugeCache:SetVisible(true);
 
 	LocateItems();
 	GetTokenIndex();
@@ -254,6 +297,24 @@ function LocateItems()
 	local LARGECACHECOUNT = 0;
 	local HUGECACHECOUNT = 0;
 
+    -- quickslots always prefer partial stacks over full stacks, but between partials, user can control which populates quickslot, by rearranging in bags
+    -- not all of the full-stack cases have been validated for caches, due to daunting test prereqs. Over 50 huge caches (gulp!)
+
+	local PARTIALCAVECLAWSTACK = false;
+	local PARTIALDOWSINGSTACK = false;
+	local PARTIALPICKSTACK = false;
+	local PARTIALSMALLCACHESTACK = false;
+	local PARTIALMEDCACHESTACK = false;
+	local PARTIALLARGECACHESTACK = false;
+
+	local CAVECLAWSINQUICKSLOT = 0;
+	local DOWSINGINQUICKSLOT = 0;
+	local PICKSINQUICKSLOT = 0;
+	local SMALLCACHESINQUICKSLOT = 0;
+	local MEDCACHESINQUICKSLOT = 0;
+	local LARGECACHESINQUICKSLOT = 0;
+	local HUGECACHESINQUICKSLOT = 0;
+
 
 	for i=1, BAGSIZE do
 		if MYBAGS:GetItem(i) ~= nil then
@@ -262,44 +323,162 @@ function LocateItems()
 			local CURNAME = CURITEM:GetName();
 
 			if CURNAME == _LANG.CAVECLAW[SETTINGS.LANGUAGE] then
-				CAVECLAWCOUNT = CAVECLAWCOUNT + CURITEM:GetQuantity();
-				qsCaveClaws:SetItem(CURITEM);
+				local THISSTACKSIZE = CURITEM:GetQuantity();
+				local NOTINSTACK;
+
+				CAVECLAWCOUNT = CAVECLAWCOUNT + THISSTACKSIZE;
+
+				if ((THISSTACKSIZE < CURITEM:GetMaxStackSize()) or (not PARTIALCAVECLAWSTACK)) then
+					qsCaveClaws:SetItem(CURITEM);
+					if (THISSTACKSIZE < CURITEM:GetMaxStackSize()) then
+						PARTIALCAVECLAWSTACK = true;
+					end
+					CAVECLAWSINQUICKSLOT = THISSTACKSIZE;
+				end
+				NOTINSTACK = CAVECLAWCOUNT - CAVECLAWSINQUICKSLOT;
+				SetOverflowText(overflowcaveclaws, NOTINSTACK);
+				
+-- need to fire on QuantityChanged events, otherwise merging partial stacks and overflowing a full stack, can produce inaccurate counts
+
+				CURITEM.QuantityChanged = CURITEM.QuantityChanged or function (sender, args)
+					LocateItems();
+				end
 			end
 
 			if CURNAME == _LANG.DOWSING[SETTINGS.LANGUAGE] then
-				DOWSINGCOUNT = DOWSINGCOUNT + CURITEM:GetQuantity();
-				qsDowsing:SetItem(CURITEM);
+				local THISSTACKSIZE = CURITEM:GetQuantity();
+				local NOTINSTACK, SHOWNINQUICKSLOT;
+
+				DOWSINGCOUNT = DOWSINGCOUNT + THISSTACKSIZE;
+
+				if ((THISSTACKSIZE < CURITEM:GetMaxStackSize()) or (not PARTIALDOWSINGSTACK)) then
+					qsDowsing:SetItem(CURITEM);
+					if (THISSTACKSIZE < CURITEM:GetMaxStackSize()) then
+						PARTIALDOWSINGSTACK = true;
+					end
+					DOWSINGINQUICKSLOT = THISSTACKSIZE;
+				end
+				NOTINSTACK = DOWSINGCOUNT - DOWSINGINQUICKSLOT;
+				SetOverflowText(overflowDowsing, NOTINSTACK);
+
+				CURITEM.QuantityChanged = CURITEM.QuantityChanged or function (sender, args)
+					LocateItems();
+				end
 			end
 
 			if CURNAME == _LANG.PICK[SETTINGS.LANGUAGE] then
-				PICKCOUNT = PICKCOUNT + CURITEM:GetQuantity();
-				qsPicks:SetItem(CURITEM);
+				local THISSTACKSIZE = CURITEM:GetQuantity();
+				local NOTINSTACK;
+
+				PICKCOUNT = PICKCOUNT + THISSTACKSIZE;
+
+				if ((THISSTACKSIZE < CURITEM:GetMaxStackSize()) or (not PARTIALPICKSTACK)) then
+					qsPicks:SetItem(CURITEM);
+					if (THISSTACKSIZE < CURITEM:GetMaxStackSize()) then
+						PARTIALPICKSTACK = true;
+					end
+					PICKSINQUICKSLOT = THISSTACKSIZE;
+				end
+				NOTINSTACK = PICKCOUNT - PICKSINQUICKSLOT;
+				SetOverflowText(overflowPicks, NOTINSTACK);
+
+				CURITEM.QuantityChanged = CURITEM.QuantityChanged or function (sender, args)
+					LocateItems();
+				end
 			end
 
 			if CURNAME == _LANG.SMALLCACHE[SETTINGS.LANGUAGE] then
-				SMALLCACHECOUNT = SMALLCACHECOUNT + CURITEM:GetQuantity();
-				qsSmallCache:SetItem(CURITEM);
+				local THISSTACKSIZE = CURITEM:GetQuantity();
+				SMALLCACHECOUNT = SMALLCACHECOUNT + THISSTACKSIZE;
+				if ((THISSTACKSIZE < CURITEM:GetMaxStackSize()) or (not PARTIALSMALLCACHESTACK)) then
+					qsSmallCache:SetItem(CURITEM);
+					if (THISSTACKSIZE < CURITEM:GetMaxStackSize()) then
+						PARTIALSMALLCACHESTACK = true;
+					end
+					SMALLCACHESINQUICKSLOT = THISSTACKSIZE;
+				end
+				NOTINSTACK = SMALLCACHECOUNT - SMALLCACHESINQUICKSLOT;
+				SetOverflowText(overflowSmallCache, NOTINSTACK);
+
+				CURITEM.QuantityChanged = CURITEM.QuantityChanged or function (sender, args)
+					LocateItems();
+				end
 			end
 
 			if CURNAME == _LANG.MEDCACHE[SETTINGS.LANGUAGE] then
-				MEDIUMCACHECOUNT = MEDIUMCACHECOUNT + CURITEM:GetQuantity();
-				qsMedCache:SetItem(CURITEM);
+				local THISSTACKSIZE = CURITEM:GetQuantity();
+				MEDIUMCACHECOUNT = MEDIUMCACHECOUNT + THISSTACKSIZE;
+				if ((THISSTACKSIZE < CURITEM:GetMaxStackSize()) or (not PARTIALMEDIUMCACHESTACK)) then
+					qsMedCache:SetItem(CURITEM);
+					if (THISSTACKSIZE < CURITEM:GetMaxStackSize()) then
+						PARTIALMEDIUMCACHESTACK = true;
+					end
+					MEDCACHESINQUICKSLOT = THISSTACKSIZE;
+				end
+				NOTINSTACK = MEDIUMCACHECOUNT - MEDCACHESINQUICKSLOT;
+				SetOverflowText(overflowMedCache, NOTINSTACK);
+
+				CURITEM.QuantityChanged = CURITEM.QuantityChanged or function (sender, args)
+					LocateItems();
+				end
 			end
 
 			if CURNAME == _LANG.LARGECACHE[SETTINGS.LANGUAGE] then
-				LARGECACHECOUNT = LARGECACHECOUNT + CURITEM:GetQuantity();
-				qsLargeCache:SetItem(CURITEM);
+				local THISSTACKSIZE = CURITEM:GetQuantity();
+				LARGECACHECOUNT = LARGECACHECOUNT + THISSTACKSIZE;
+				if ((THISSTACKSIZE < CURITEM:GetMaxStackSize()) or (not PARTIALLARGECACHESTACK)) then
+					qsLargeCache:SetItem(CURITEM);
+					if (THISSTACKSIZE < CURITEM:GetMaxStackSize()) then
+						PARTIALLARGECACHESTACK = true;
+					end
+					LARGECACHESINQUICKSLOT = THISSTACKSIZE;
+				end
+				NOTINSTACK = LARGECACHECOUNT - LARGECACHESINQUICKSLOT;
+				SetOverflowText(overflowLargeCache, NOTINSTACK);
+
+				CURITEM.QuantityChanged = CURITEM.QuantityChanged or function (sender, args)
+					LocateItems();
+				end
 			end
 
 			if CURNAME == _LANG.HUGECACHE[SETTINGS.LANGUAGE] then
-				HUGECACHECOUNT = HUGECACHECOUNT + CURITEM:GetQuantity();
-				qsHugeCache:SetItem(CURITEM);
+				local THISSTACKSIZE = CURITEM:GetQuantity();
+				HUGECACHECOUNT = HUGECACHECOUNT + THISSTACKSIZE;
+				if ((THISSTACKSIZE < CURITEM:GetMaxStackSize()) or (not PARTIALHUGECACHESTACK)) then
+					qsHugeCache:SetItem(CURITEM);
+					if (THISSTACKSIZE < CURITEM:GetMaxStackSize()) then
+						PARTIALHUGECACHESTACK = true;
+					end
+					HUGECACHESINQUICKSLOT = THISSTACKSIZE;
+				end
+				NOTINSTACK = HUGECACHECOUNT - HUGECACHESINQUICKSLOT;
+				SetOverflowText(overflowHugeCache, NOTINSTACK);
+
+				CURITEM.QuantityChanged = CURITEM.QuantityChanged or function (sender, args)
+					LocateItems();
+				end
 			end
 		end
 	end
 
 	RefreshStats();
 
+end
+
+function SetOverflowText(ctl, num)
+	if (num == 0) then
+		ctl:SetText("");
+	else
+		if (string.len(tostring(num)) > 2) then
+			if (string.len(tostring(num)) > 3) then
+				ctl:SetText("ZOMG");
+			else
+				ctl:SetText(num.."+");
+			end
+		else
+			ctl:SetText(num.." +");
+		end
+	end
 end
 
 
@@ -314,17 +493,22 @@ function GetTokenCount()
 		else	-- spent rather than looted
 			STATS[MYNAME].TOTALSPENT = STATS[MYNAME].TOTALSPENT + math.abs(QTYNEWTOKENS);
 		end
-
-		--tokens_image:SetBackground(MYWALLET:GetItem(TOKENINDEX):GetImage());
 	else
 		TOKENCOUNT = 0;
-		--tokens_image:SetBackground(_IMAGES.GREY_TOKENS);
 	end
 
 	TOKENOLDCOUNT = TOKENCOUNT;
 	--tokens_label_underlay:SetText(comma_value(TOKENCOUNT));
 
 	cTokens:SetQuantity(TOKENCOUNT);
+	if (TOKENCOUNT > 0) then
+		tokens_underlay:SetVisible(false);
+		cTokens:SetVisible(true);
+	else
+		tokens_underlay:SetVisible(true);
+		cTokens:SetVisible(false);
+		tokens_underlay:SetWantsUpdates(false);
+	end
 
 	RefreshStats();
 

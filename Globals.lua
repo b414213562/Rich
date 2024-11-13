@@ -12,7 +12,12 @@ MYWALLET.ItemAdded = function (sender,args)
 end
 
 MYWALLET.ItemRemoved = function (sender,args)
-	tokens_image:SetWantsUpdates(true);
+	tokens_underlay:SetWantsUpdates(true);
+	tokens_underlay.Update = function(sender, args)
+		GetTokenIndex();
+        tokens_underlay:SetWantsUpdates(false);
+	end
+	GetTokenIndex();
 end
 
 
