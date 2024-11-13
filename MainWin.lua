@@ -120,11 +120,7 @@ function DrawMainWindow()
 	qsCaveClaws:SetParent(wMainWinParent);
 	qsCaveClaws:SetPosition(20,200);
 
-	overflowcaveclaws = Turbine.UI.Label();
-	overflowcaveclaws:SetParent(wMainWinParent);
-	overflowcaveclaws:SetSize(32,32);
-	overflowcaveclaws:SetPosition(23, 188);
-	overflowcaveclaws:SetVisible(true);
+	overflowcaveclaws = CreateOverflowLabel(23, 188);
 
 	dowsing_underlay = Turbine.UI.Control();
 	dowsing_underlay:SetParent(wMainWinParent);
@@ -137,11 +133,7 @@ function DrawMainWindow()
 	qsDowsing:SetParent(wMainWinParent);
 	qsDowsing:SetPosition(60,200);
 
-	overflowDowsing = Turbine.UI.Label();
-	overflowDowsing:SetParent(wMainWinParent);
-	overflowDowsing:SetSize(32,32);
-	overflowDowsing:SetPosition(63, 188);
-	overflowDowsing:SetVisible(true);
+	overflowDowsing = CreateOverflowLabel(63, 188);
 
 	picks_underlay = Turbine.UI.Control();
 	picks_underlay:SetParent(wMainWinParent);
@@ -154,11 +146,7 @@ function DrawMainWindow()
 	qsPicks:SetParent(wMainWinParent);
 	qsPicks:SetPosition(100,200);
 
-	overflowPicks = Turbine.UI.Label();
-	overflowPicks:SetParent(wMainWinParent);
-	overflowPicks:SetSize(32,32);
-	overflowPicks:SetPosition(103, 188);
-	overflowPicks:SetVisible(true);
+	overflowPicks = CreateOverflowLabel(103, 188);
 
 	tokens_underlay = Turbine.UI.Control();
 	tokens_underlay:SetParent(wMainWinParent);
@@ -184,11 +172,7 @@ function DrawMainWindow()
 	qsSmallCache:SetParent(wMainWinParent);
 	qsSmallCache:SetPosition(20,242);
 
-	overflowSmallCache = Turbine.UI.Label();
-	overflowSmallCache:SetParent(wMainWinParent);
-	overflowSmallCache:SetSize(32,32);
-	overflowSmallCache:SetPosition(23, 280);
-	overflowSmallCache:SetVisible(true);
+	overflowSmallCache = CreateOverflowLabel(23, 280);
 
 	treasuresmed_underlay = Turbine.UI.Control();
 	treasuresmed_underlay:SetParent(wMainWinParent);
@@ -201,11 +185,7 @@ function DrawMainWindow()
 	qsMedCache:SetParent(wMainWinParent);
 	qsMedCache:SetPosition(60,242);
 
-	overflowMedCache = Turbine.UI.Label();
-	overflowMedCache:SetParent(wMainWinParent);
-	overflowMedCache:SetSize(32,32);
-	overflowMedCache:SetPosition(63, 280);
-	overflowMedCache:SetVisible(true);
+	overflowMedCache = CreateOverflowLabel(63, 280);
 
 	treasureslarge_underlay = Turbine.UI.Control();
 	treasureslarge_underlay:SetParent(wMainWinParent);
@@ -218,11 +198,7 @@ function DrawMainWindow()
 	qsLargeCache:SetParent(wMainWinParent);
 	qsLargeCache:SetPosition(100,242);
 
-	overflowLargeCache = Turbine.UI.Label();
-	overflowLargeCache:SetParent(wMainWinParent);
-	overflowLargeCache:SetSize(32,32);
-	overflowLargeCache:SetPosition(103, 280);
-	overflowLargeCache:SetVisible(true);
+	overflowLargeCache = CreateOverflowLabel(103, 280);
 
 	treasureshuge_underlay = Turbine.UI.Control();
 	treasureshuge_underlay:SetParent(wMainWinParent);
@@ -235,11 +211,7 @@ function DrawMainWindow()
 	qsHugeCache:SetParent(wMainWinParent);
 	qsHugeCache:SetPosition(140,242);
 
-	overflowHugeCache = Turbine.UI.Label();
-	overflowHugeCache:SetParent(wMainWinParent);
-	overflowHugeCache:SetSize(32,32);
-	overflowHugeCache:SetPosition(143, 280);
-	overflowHugeCache:SetVisible(true);
+	overflowHugeCache = CreateOverflowLabel(143, 280);
 
 	LocateItems();
 	GetTokenIndex();
@@ -281,6 +253,20 @@ function DrawMainWindow()
 		SETTINGS.MAINWIN.Y = wMainWinParent:GetTop();
 	end
 
+end
+
+---Factory for overflow labels.
+---@param left number
+---@param top number
+---@return Label
+function CreateOverflowLabel(left, top)
+	local overflowLabel = Turbine.UI.Label();
+	overflowLabel:SetParent(wMainWinParent);
+	overflowLabel:SetSize(32,32);
+	overflowLabel:SetPosition(left, top);
+	overflowLabel:SetVisible(true);
+
+    return overflowLabel;
 end
 
 
