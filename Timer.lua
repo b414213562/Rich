@@ -1,4 +1,6 @@
 
+PreviousUpdate = 0;
+
 function SetStartRound()
 	EVENTSTART = Turbine.Engine.GetLocalTime();
 	ROUNDACTIVE = true;
@@ -42,6 +44,10 @@ end
 
 function UpdateLabels()
 	local CURTIME = Turbine.Engine.GetLocalTime();
+
+    -- Only update if it's been at least a half-second since the last update:
+    if (CURTIME < PreviousUpdate + 0.5) then return; end
+    PreviousUpdate = CURTIME;
 
 	if ROUNDACTIVE == true then
 		lblRoundDuration:SetText(FormatTime(CURTIME-EVENTSTART));
