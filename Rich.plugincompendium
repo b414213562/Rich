@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PluginConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Id>694</Id>
+  <Name>Rich</Name>
+  <Version>1.2.1</Version>
+  <Author>Galuhad</Author>
+  <InfoUrl>http://www.lotrointerface.com/downloads/info694</InfoUrl>
+  <DownloadUrl>http://www.lotrointerface.com/downloads/download694</DownloadUrl>
+  <Descriptors>
+    <descriptor>GaluhadPlugins\Rich.plugin</descriptor>
+  </Descriptors>
+  <Dependencies />
+</PluginConfig>

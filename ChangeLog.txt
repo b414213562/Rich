@@ -1,0 +1,11 @@
+
+v.1.2.0 
+- Changed the 'Burried Treasure Token' icon to a proper item info control which can be inspected/linked as normal.
+- Added barter window with items.
+- Added fields to the string files to allow for future russian translations.
+- Made some adjustments to improve stat gathering. Should all work properly now.
+
+v.1.1.0 Beta - 17/11/2013
+- Increased width of token label to show correctly values of 1000+
+- Introduced a stat window which will display some statistics for each character from the treasure hunt. This has been gathering data since the early release so you will find a bunch of stats already available.
+- Added stat entries for total tokens looted and total tokens spent - These won't have any history so will only show present values until future events.
