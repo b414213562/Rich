@@ -14,7 +14,8 @@
         "c:\\Users\\bkckx\\.vscode\\extensions\\lunarwtr.lotro-api-1.0.16\\resources\\Lua\\EmmyLua\\Turbine"
     ],
     "Lua.diagnostics.disable": [
-        "duplicate-set-field"
+        "duplicate-set-field",
+        "inject-field"
     ],
     "xml.fileAssociations": [
         {
@@ -37,5 +38,8 @@
             "pattern": "**/SkinDefinition.xml",
             "systemId": "c:\\Users\\bkckx\\.vscode\\extensions\\lunarwtr.lotro-api-1.0.16\\resources\\xsds\\lotro-skin.xsd"
         }
+    ],
+    "Lua.diagnostics.globals": [
+        "wMapWinParent"
     ]
 }
