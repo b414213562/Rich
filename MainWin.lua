@@ -289,7 +289,7 @@ function LocateItems()
             ["QUICKSLOT"] = qsDowsing;
             ["LABEL"] = overflowDowsing;
         };
-        [_LANG.DOWSING[SETTINGS.LANGUAGE]] = {
+        [_LANG.PICK[SETTINGS.LANGUAGE]] = {
             ["COUNT"] = 0;
             ["PARTIAL"] = false;
             ["QUICKSLOT_COUNT"] = 0;
