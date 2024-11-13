@@ -275,49 +275,49 @@ function LocateItems()
 	local BAGSIZE = MYBAGS:GetSize();
 
     local variables = {
-        [_LANG.CAVECLAW[SETTINGS.LANGUAGE]] = {
+        [_LANG.CAVECLAW[CLIENTLANG]] = {
             ["COUNT"] = 0;
             ["PARTIAL"] = false;
             ["QUICKSLOT_COUNT"] = 0;
             ["QUICKSLOT"] = qsCaveClaws;
             ["LABEL"] = overflowcaveclaws;
         };
-        [_LANG.DOWSING[SETTINGS.LANGUAGE]] = {
+        [_LANG.DOWSING[CLIENTLANG]] = {
             ["COUNT"] = 0;
             ["PARTIAL"] = false;
             ["QUICKSLOT_COUNT"] = 0;
             ["QUICKSLOT"] = qsDowsing;
             ["LABEL"] = overflowDowsing;
         };
-        [_LANG.PICK[SETTINGS.LANGUAGE]] = {
+        [_LANG.PICK[CLIENTLANG]] = {
             ["COUNT"] = 0;
             ["PARTIAL"] = false;
             ["QUICKSLOT_COUNT"] = 0;
             ["QUICKSLOT"] = qsPicks;
             ["LABEL"] = overflowPicks;
         };
-        [_LANG.SMALLCACHE[SETTINGS.LANGUAGE]] = {
+        [_LANG.SMALLCACHE[CLIENTLANG]] = {
             ["COUNT"] = 0;
             ["PARTIAL"] = false;
             ["QUICKSLOT_COUNT"] = 0;
             ["QUICKSLOT"] = qsSmallCache;
             ["LABEL"] = overflowSmallCache;
         };
-        [_LANG.MEDCACHE[SETTINGS.LANGUAGE]] = {
+        [_LANG.MEDCACHE[CLIENTLANG]] = {
             ["COUNT"] = 0;
             ["PARTIAL"] = false;
             ["QUICKSLOT_COUNT"] = 0;
             ["QUICKSLOT"] = qsMedCache;
             ["LABEL"] = overflowMedCache;
         };
-        [_LANG.LARGECACHE[SETTINGS.LANGUAGE]] = {
+        [_LANG.LARGECACHE[CLIENTLANG]] = {
             ["COUNT"] = 0;
             ["PARTIAL"] = false;
             ["QUICKSLOT_COUNT"] = 0;
             ["QUICKSLOT"] = qsLargeCache;
             ["LABEL"] = overflowLargeCache;
         };
-        [_LANG.HUGECACHE[SETTINGS.LANGUAGE]] = {
+        [_LANG.HUGECACHE[CLIENTLANG]] = {
             ["COUNT"] = 0;
             ["PARTIAL"] = false;
             ["QUICKSLOT_COUNT"] = 0;
