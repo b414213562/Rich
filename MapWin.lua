@@ -254,7 +254,7 @@ function DrawMapWin()
 
     local caveClawActivatedButton = Turbine.UI.Lotro.Button();
     caveClawActivatedButton:SetParent(caveClawControls);
-    caveClawActivatedButton:SetWidth(125);
+    caveClawActivatedButton:SetWidth(GetString(_LANG.DEPLOY_CAVE_CLAW_WIDTH));
     caveClawActivatedButton:SetPosition(locWidth + 10, 5);
     caveClawActivatedButton:SetText(GetString(_LANG.DEPLOY_CAVE_CLAW));
     caveClawActivatedButton.Click = function(sender, args)
@@ -275,7 +275,7 @@ function DrawMapWin()
         previewCircle:SetVisible(false);
     end
 
-    local resetWidth = 100;
+    local resetWidth = GetString(_LANG.RESET_MAP_WIDTH);
     local btnReset = Turbine.UI.Lotro.Button();
     btnReset:SetParent(caveClawControls);
     btnReset:SetWidth(resetWidth);
@@ -308,7 +308,7 @@ function DrawMapWin()
         caveClawValueButton:SetParent(caveClawControls);
         caveClawValueButton:SetText(GetString(_LANG[value]));
         caveClawValueButton:SetWidth(100);
-        caveClawValueButton:SetPosition(caveClawActivatedButton:GetWidth() + 5 + 105 * (key - 1), 30);
+        caveClawValueButton:SetPosition(caveClawActivatedButton:GetWidth() + 10 + 105 * (key - 1), 30);
         caveClawValueButton.Click = function(sender, args)
             local caveClawCircle = map.CaveClaws[#map.CaveClaws];
             caveClawCircle:SetBackground(_IMAGES["CAVE_CLAW_CIRCLE_" .. value]);

@@ -45,7 +45,7 @@ function DrawStatWindow()
 		_lblStats[i][0] = Turbine.UI.Label();
 		_lblStats[i][0]:SetParent(wStatWinParent);
 		_lblStats[i][0]:SetPosition(30,curTop);
-		_lblStats[i][0]:SetSize(160,18);
+		_lblStats[i][0]:SetSize(200,18);
 		_lblStats[i][0]:SetForeColor(Turbine.UI.Color.DarkKhaki);
 		_lblStats[i][0]:SetFont(Turbine.UI.Lotro.Font.Verdana14);
 		_lblStats[i][0]:SetText("-");

@@ -14,7 +14,7 @@ _BARTER =
 	[04] = {[1]=1879275875;[2]={[1]=1;};};		-- Map to the Treasure Field
 
     [05] = {[1]="DIVIDER1"; [2]={["ENGLISH"] = "Marís"}};
-    [06] = {[1]="DIVIDER2"; [2]={["ENGLISH"] = "Medium Cache Rewards"}};
+    [06] = {[1]="DIVIDER2"; [2]={["ENGLISH"] = "Medium Cache Rewards"; ["FRENCH"] = "Récompenses de cachette moyenne"; ["GERMAN"] = "Mittleres Versteck mit Belohnungen"; ["RUSSIAN"] = "Награды за средние сундуки"; }};
 	[07] = {[1]=1879206698;[2]={[1]=90;};};		-- Wooden Cave-claw Mask
 	[08] = {[1]=1879206806;[2]={[1]=30;};};		-- Treasure Chest
 	[09] = {[1]=1879206805;[2]={[1]=60;};};		-- Dig-Site
@@ -23,13 +23,13 @@ _BARTER =
 	[12] = {[1]=1879210276;[2]={[1]=60;};};		-- Treasure Hunter's Satchel
 	[13] = {[1]=1879207875;[2]={[1]=5;};};		-- Domesticated Cave-claw
 
-    [14] = {[1]="DIVIDER2"; [2]={["ENGLISH"] = "Large Cache Rewards"}};
+    [14] = {[1]="DIVIDER2"; [2]={["ENGLISH"] = "Large Cache Rewards"; ["FRENCH"] = "Récompenses de grosse cachette"; ["GERMAN"] = "Großes Versteck mit Belohnungen"; ["RUSSIAN"] = "Награды за большие сундуки"; }};
 	[15] = {[1]=1879206803;[2]={[1]=150;};};	-- Treasure Hunter's Pack
 	[16] = {[1]=1879206804;[2]={[1]=200;};};	-- Jeweller's Helm
 	[17] = {[1]=1879352247;[2]={[1]=200;}; [3]=300; };	-- 300 Motes of Enchantment
 	[18] = {[1]=1879206818;[2]={[1]=250;};};	-- Gem Inspection
 
-    [19] = {[1]="DIVIDER2"; [2]={["ENGLISH"] = "Huge Cache Rewards"}};
+    [19] = {[1]="DIVIDER2"; [2]={["ENGLISH"] = "Huge Cache Rewards"; ["FRENCH"] = "Récompenses d'immense cachette"; ["GERMAN"] = "Riesiges Versteck mit Belohnungen"; ["RUSSIAN"] = "Награды за огромные сундуки"; }};
 	[20] = {[1]=1879206807;[2]={[1]=400;};};	-- Trained Cave-claw
 	[21] = {[1]=1879206697;[2]={[1]=500;};};	-- Golden Cave-claw Mask
 	[22] = {[1]=1879206819;[2]={[1]=300;};};	-- Rich!
@@ -42,7 +42,7 @@ _BARTER =
 	[29] = {[1]=1879315068;[2]={[1]=500;};};	-- Tome of the Black-beak Cave-claw
 	[30] = {[1]=1879315061;[2]={[1]=500;};};	-- Tome of the Green-back Cave-claw
 
-    [31] = {[1]="DIVIDER2"; [2]={["ENGLISH"] = "Pets & Decorations - Imported Hobnanigans Goods"}};
+    [31] = {[1]="DIVIDER2"; [2]={["ENGLISH"] = "Pets & Decorations - Imported Hobnanigans Goods"; ["FRENCH"] = "Créatures apprivoisées et décorations - Articles importés de chasse-poulet"; ["GERMAN"] = "Begleiter & Einrichtung - Importierte Hobnaniganswaren"; ["RUSSIAN"] = "Питомцы и украшения для дома: хобнаниган"; }};
 	[32] = {[1]=1879305771;[2]={[1]=150;};};	-- Tome of the White Chicken
 	[33] = {[1]=1879305770;[2]={[1]=225;};};	-- Tome of the Red Chicken
 	[34] = {[1]=1879305772;[2]={[1]=300;};};	-- Tome of the Dorking Chicken
@@ -57,7 +57,7 @@ _BARTER =
 	[43] = {[1]=1879305708;[2]={[1]=90;};};		-- Blue Hobbit Waggon
 	[44] = {[1]=1879305712;[2]={[1]=30;};};		-- Broken Hobbit Waggon
 
-    [45] = {[1]="DIVIDER2"; [2]={["ENGLISH"] = "Recipes - Imported Hobnanigans Goods"}};
+    [45] = {[1]="DIVIDER2"; [2]={["ENGLISH"] = "Recipes - Imported Hobnanigans Goods"; ["FRENCH"] = "Méthodes de préparation - Articles importés de chasse-poulet"; ["GERMAN"] = "Rezepte - Importierte Hobnaniganswaren"; ["RUSSIAN"] = "Рецепты: хобнаниган"; }};
 	[46] = {[1]=1879305869;[2]={[1]=10;};};		-- Oliphaunt Ear Recipe
 	[47] = {[1]=1879305870;[2]={[1]=10;};};		-- Roasted Coney on a Stick Recipe
 	[48] = {[1]=1879305864;[2]={[1]=10;};};		-- Chicken Wing Recipe
@@ -73,7 +73,7 @@ _BARTER =
 	[58] = {[1]=1879305933;[2]={[1]=5;};};		-- Took in the Hole Banquet Recipe
 	[59] = {[1]=1879305937;[2]={[1]=5;};};		-- Hobnanigans Banquet Recipe
 
-    [60] = {[1]="DIVIDER2"; [2]={["ENGLISH"] = "Consumables - Imported Hobnanigans Goods"}};
+    [60] = {[1]="DIVIDER2"; [2]={["ENGLISH"] = "Consumables - Imported Hobnanigans Goods"; ["FRENCH"] = "Objets consommables - Articles importés de chasse-poulet"; ["GERMAN"] = "Verbrauchsgüter - Importierte Hobnaniganswaren"; ["RUSSIAN"] = "Расходуемые предметы: хобнаниган"; }};
 	[61] = {[1]=1879305619;[2]={[1]=5;};};		-- Facepaint Stencil - Flower
 	[62] = {[1]=1879305622;[2]={[1]=5;};};		-- Facepaint Stencil - Butterfly
 	[63] = {[1]=1879305616;[2]={[1]=5;};};		-- Facepaint Stencil - Bee

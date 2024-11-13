@@ -30,9 +30,11 @@ _LANG =
     ["INCOMPARABLE"] =  {["ENGLISH"] = "Large"; ["FRENCH"] = "Grande"; ["GERMAN"] = "Großer"; };
     ["DETECT_OFFSET"] = {["ENGLISH"] = "Detect Location"; ["GERMAN"] = "Standort ermitteln"; ["FRENCH"] = "Détecter l'emplacement"; };
     ["LOC_COMMAND"] =   {["ENGLISH"] = "/loc"; ["GERMAN"] = "/pos"; ["FRENCH"] = "/emp"; };
-    ["DEPLOY_CAVE_CLAW"] = {["ENGLISH"] = "Mark Cave-claw"; };
-    ["CAVE_CLAW_RESULT"] = {["ENGLISH"] = "Cave-claw result:"; };
-    ["RESET_MAP"] = {["ENGLISH"] = "Reset Map"; };
+    ["DEPLOY_CAVE_CLAW"] = {["ENGLISH"] = "Mark Cave-claw"; ["FRENCH"] = "Marquez grifferoche"; ["GERMAN"] = "Markiere Höhlenklaue"; };
+    ["DEPLOY_CAVE_CLAW_WIDTH"] = {["ENGLISH"] = 125; ["FRENCH"] = 150; ["GERMAN"] = 160; };
+    ["CAVE_CLAW_RESULT"] = {["ENGLISH"] = "Cave-claw result:"; ["FRENCH"] = "Grifferoche résultat"; ["GERMAN"] = "Höhlenklaue-Ergebnis"; };
+    ["RESET_MAP"] = {["ENGLISH"] = "Reset Map"; ["FRENCH"] = "Réinitialiser la carte"; ["GERMAN"] = "Karte zurücksetzen"; };
+    ["RESET_MAP_WIDTH"] = {["ENGLISH"] = 100; ["FRENCH"] = 150; ["GERMAN"] = 135; };
 
 
 	["CAVECLAW"] = 	{ -- STANDARD
