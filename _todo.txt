@@ -1,2 +1,0 @@
-2024-11-12:
-    What's up with LONGESTROUND maxing out at 3600?
