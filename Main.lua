@@ -68,6 +68,12 @@ function loadData()
 
 	end
 
+    -- only keep the event start time if it was less than 2 minutes ago:
+    if ((Turbine.Engine.GetLocalTime() - SETTINGS.EVENTSTART) > (60 * 2)) then
+        SETTINGS.EVENTSTART = 0;
+    end
+    if SETTINGS.EVENTSTART > 0 then ROUNDACTIVE = true; end
+
 
 	-- STATS ---------------------------------------------------------------------------------------
 	local SavedStats = {};

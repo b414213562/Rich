@@ -2,7 +2,7 @@
 PreviousUpdate = 0;
 
 function SetStartRound()
-	EVENTSTART = Turbine.Engine.GetLocalTime();
+	SETTINGS.EVENTSTART = Turbine.Engine.GetLocalTime();
 	ROUNDACTIVE = true;
 end
 
@@ -23,7 +23,7 @@ end
 
 function SetEndRound()
 	if ROUNDACTIVE == true then
-		local ROUNDLEN = Turbine.Engine.GetLocalTime() - EVENTSTART; -- length in seconds.
+		local ROUNDLEN = Turbine.Engine.GetLocalTime() - SETTINGS.EVENTSTART; -- length in seconds.
 		STATS[MYNAME].TOTALTIME = STATS[MYNAME].TOTALTIME + ROUNDLEN;
 		STATS[MYNAME].TOTALROUNDS = STATS[MYNAME].TOTALROUNDS + 1;
 
@@ -50,7 +50,7 @@ function UpdateLabels()
     PreviousUpdate = CURTIME;
 
 	if ROUNDACTIVE == true then
-		lblRoundDuration:SetText(FormatTime(CURTIME-EVENTSTART));
+		lblRoundDuration:SetText(FormatTime(CURTIME-SETTINGS.EVENTSTART));
 	else
 		lblRoundDuration:SetText(_LANG.WAITINGROUND[SETTINGS.LANGUAGE]);
 	end
