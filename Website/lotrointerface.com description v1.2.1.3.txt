@@ -1,0 +1,31 @@
+I just released a patch for the Rich! plugin: [url=https://www.lotrointerface.com/downloads/fileinfo.php?id=1249]Rich! patch consolidation and interactive map[/url]
+
+This patch combines the other Rich! patches (French and German languages, updated barter items, and multiple item stacks), and adds an interactive map.
+
+Version 1.2.1.3 release notes:
+
+[list]
+[*] Incorporates the updated barter list from the patch [url=https://www.lotrointerface.com/downloads/info1152.html]"Rich! updated barter items"[/url], by b414213562
+[*] Incorporates German translations from the patch [url=https://www.lotrointerface.com/downloads/info1013.html]"Rich Patch (de)"[/url], by Nadia
+[*] Incorporates additional German translations from Talyrion
+[*] Incorporates French translations from the patch [url=https://www.lotrointerface.com/downloads/info994.html]"Rich Patch Fr"[/url], by Galphoglas
+[*] Incorporates the changes from [url=https://www.lotrointerface.com/downloads/info1215.html]"Patch to Rich! -- Items and tokens bugfixes/enhancements"[/url], by Egarthur
+[*] Updates the Barter Window by adding dividers which indicate with which barterer and in which section you can find an item.
+[*] Adds an interactive map, see details below.
+[/list]
+
+This patch includes an interactive map. Click "Map" on the main window to open it.
+
+The Rich! interactive map shows you the known locations of dig-sites, and lets you visualize how effective a cave-claw will be from your position. When you click the "Detect Location" button, you will see a yellow circle showing you which dig-sites will be examined by a cave-claw, if you release it from where you are. (Note: Sometimes a cave-claw goes well outside the expected 20 meter range. My current working theory is that you can critically succeed on your cave-claw, and it will get a boost to its range.)
+
+[IMG]https://www.lotrointerface.com/downloads/full3806.jpg[/IMG]
+
+Rich! cannot detect when you actually use a cave-claw. Just click the "Detect Location" and then "Mark Cave-claw" buttons when you deploy a cave-claw, and Rich! will remember where you were. When you get the cave-claw report, it will indicate that the best the cave-claw found was either small, medium, large, or huge. There are corresponding buttons in the "Cave-claw result:" row. This uses the standard Quality color-coding: yellow for small, purple for medium, cyan for large.
+
+[IMG]https://www.lotrointerface.com/downloads/full3807.jpg[/IMG]
+
+You can also click a dig site to mark it as complete (either because you dug it up or because you do not want to.) If you mark a cave-claw as Small, all dig sites in that area are automatically marked complete, as usually you do not want to dig up small sites.
+
+[IMG]https://www.lotrointerface.com/downloads/full3808.jpg[/IMG]
+
+The map automatically resets when a round begins. If you need to reset it manually, click the "Reset Map" button.

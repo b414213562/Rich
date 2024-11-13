@@ -1,0 +1,44 @@
+[SIZE="4"][COLOR="DeepSkyBlue"]Introduction[/COLOR][/SIZE]
+
+[URL="https://www.lotrointerface.com/downloads/info694-Rich.html"]Rich![/URL] is a great interface for keeping track of things during the Buried Treasure Event. However, over the years it has needed updates for barter items and language strings.
+
+This patch:
+[list]
+[*] Incorporates the updated barter list from the patch "Rich! updated barter items", by b414213562
+[*] Incorporates German translations from the patch "Rich Patch (de)", by Nadia
+[*] Incorporates additional German translations from Talyrion
+[*] Incorporates French translations from the patch "Rich Patch Fr", by Galphoglas
+[*] Incorporates the changes from "Patch to Rich! -- Items and tokens bugfixes/enhancements", by Egarthur
+[*] Updates the Barter Window by adding dividers which indicate with which barterer and in which section you can find an item.
+[*] Adds an interactive map, see details below.
+[/list]
+
+This patch contains significant changes to the base Rich! plugin. It will overwrite any already-installed patch, and installing other patches may cause the interactive map to stop working. However, this patch attempts to incorporate changes from existing patches (see above) so that it is not necessary to combine them.
+
+[SIZE="4"][COLOR="DeepSkyBlue"]Interactive Map[/COLOR][/SIZE]
+This patch includes an interactive map. Click "Map" on the main window to open it.
+
+The Rich! interactive map shows you the known locations of dig-sites, and lets you visualize how effective a cave-claw will be from your position. When you click the "Detect Location" button, you will see a yellow circle showing you which dig-sites will be examined by a cave-claw, if you release it from where you are. (Note: Sometimes a cave-claw goes well outside the expected 20 meter range. My current working theory is that you can critically succeed on your cave-claw, and it will get a boost to its range.)
+
+Rich! cannot detect when you actually use a cave-claw. Just click the "Detect Location" and then "Mark Cave-claw" buttons when you deploy a cave-claw, and Rich! will remember where you were. When you get the cave-claw report, it will indicate that the best the cave-claw found was either small, medium, large, or huge. There are corresponding buttons in the "Cave-claw result:" row. This uses the standard Quality color-coding: yellow for small, purple for medium, cyan for large.
+
+You can also click a dig site to mark it as complete (either because you dug it up or because you do not want to.) If you mark a cave-claw as Small, all dig sites in that area are automatically marked complete, as usually you do not want to dig up small sites.
+
+The map automatically resets when a round begins. If you need to reset it manually, click the "Reset Map" button.
+
+[SIZE="4"][COLOR="DeepSkyBlue"]Installation and Setup[/COLOR][/SIZE]
+
+To install:
+[LIST]
+[*]First, you need to install [URL="https://www.lotrointerface.com/downloads/info694-Rich.html"]Rich![/URL] v1.2.1. This patch only includes the necessary changes to update that plugin. To install Rich!, you can use [URL="https://www.lotrointerface.com/downloads/info663-LOTROPluginCompendium.html"]Plugin Compendium[/URL]. To install it manually, click the Download button on the Rich! page, unzip the archive, and drag the "GaluhadPlugins" folder into your "Documents/The Lord of the Rings Online/Plugins" folder. (If you have not previously installed any plugins, you will have to first create the Plugins folder.)
+[*]Next, download this patch and unzip it. It also contains a "GaluhadPlugins" folder, which you should drag into the same place as before. You will be prompted to overwrite files. Answer yes.
+[/LIST]
+
+To load the plugin, use the game's built-in Plugin Manager. This can be found in the "^" menu, at the bottom of the screen, or by typing [B]/plugin manager[/B] into your chat window.
+
+When the Plugin Manager opens, find Rich! in the list on the left side. Verify that the version is 1.2.1.3. (If it is 1.2.1, then you have not properly installed the patch.) Click "Load" to load the plugin. If you would like the plugin to load automatically each time you login, choose your character's name in the "Automatically Load For" pulldown menu.
+
+[SIZE="4"][COLOR="DeepSkyBlue"]History[/COLOR][/SIZE]
+[LIST]
+[*]2024-11-13 v1.2.1.3: Initial Release of the interactive map. Also incorporates other existing patches.
+[/LIST]
