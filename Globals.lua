@@ -20,6 +20,26 @@ MYWALLET.ItemRemoved = function (sender,args)
 	GetTokenIndex();
 end
 
+---Checks for Buried Treasure effect. If missing, cancels current round.
+---@param sender EffectList
+---@param args EventEffectListEffectRemovedArgsTable
+MYCHAR:GetEffects().EffectRemoved = function(sender, args)
+    local onField = false;
+    local onFieldEffect = GetString(_LANG.FIELDBUFF);
+
+    for i=1, sender:GetCount() do
+        local effect = sender:Get(i);
+        if (effect:GetName() == onFieldEffect) then
+            onField = true;
+        end
+    end
+
+    if (not onField and ROUNDACTIVE) then
+        ROUNDACTIVE = false;
+        Turbine.Shell.WriteLine(GetString(_LANG.LEFTFIELD));
+    end
+
+end
 
 TOKENCOUNT = 0;
 TOKENINDEX = 0;

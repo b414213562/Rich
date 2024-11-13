@@ -133,7 +133,21 @@ _LANG =
 		["RUSSIAN"] = "The round has ended! The event will restart shortly";
 		};
 
-	["BERRIES"] = { -- QUEST
+    ["FIELDBUFF"] = { -- EFFECT
+        ["ENGLISH"] = "Buried Treasure Field";
+        ["FRENCH"] = "Champ du trésor enfoui";
+        ["GERMAN"] = "Feld der vergrabenen Schätze";
+        ["RUSSIAN"] = "Поле сокровищ";
+    };
+
+    ["LEFTFIELD"] = 	{ -- Sent to Turbine.Shell.WriteLine
+        ["ENGLISH"] = "<rgb=#c00000>Character left the Buried Treasure Field. Cancelling current round.</rgb>";
+        ["FRENCH"] = "<rgb=#c00000>Le personnage a quitté le Champ du trésor enfoui. Annulation du tour en cours.</rgb>";
+        ["GERMAN"] = "<rgb=#c00000>Der Charakter hat das Feld der vergrabenen Schätze verlassen. Aktuelle Runde wird abgebrochen.</rgb>";
+        ["RUSSIAN"] = "<rgb=#c00000>Персонаж покинул поле сокровищ. Отмена текущего раунда.</rgb>";
+    };
+
+    ["BERRIES"] = { -- QUEST
 		["ENGLISH"] = "Collected berries";
 		["FRENCH"] = "Baies cueillies";
 		["GERMAN"] = "Anzahl gesammelter Beeren";
