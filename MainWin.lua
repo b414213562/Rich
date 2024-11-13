@@ -274,33 +274,60 @@ function LocateItems()
 
 	local BAGSIZE = MYBAGS:GetSize();
 
-
-	local CAVECLAWCOUNT = 0;
-	local DOWSINGCOUNT = 0;
-	local PICKCOUNT = 0;
-	local SMALLCACHECOUNT = 0;
-	local MEDIUMCACHECOUNT = 0;
-	local LARGECACHECOUNT = 0;
-	local HUGECACHECOUNT = 0;
+    local variables = {
+        [_LANG.CAVECLAW[SETTINGS.LANGUAGE]] = {
+            ["COUNT"] = 0;
+            ["PARTIAL"] = false;
+            ["QUICKSLOT_COUNT"] = 0;
+            ["QUICKSLOT"] = qsCaveClaws;
+            ["LABEL"] = overflowcaveclaws;
+        };
+        [_LANG.DOWSING[SETTINGS.LANGUAGE]] = {
+            ["COUNT"] = 0;
+            ["PARTIAL"] = false;
+            ["QUICKSLOT_COUNT"] = 0;
+            ["QUICKSLOT"] = qsDowsing;
+            ["LABEL"] = overflowDowsing;
+        };
+        [_LANG.DOWSING[SETTINGS.LANGUAGE]] = {
+            ["COUNT"] = 0;
+            ["PARTIAL"] = false;
+            ["QUICKSLOT_COUNT"] = 0;
+            ["QUICKSLOT"] = qsPicks;
+            ["LABEL"] = overflowPicks;
+        };
+        [_LANG.SMALLCACHE[SETTINGS.LANGUAGE]] = {
+            ["COUNT"] = 0;
+            ["PARTIAL"] = false;
+            ["QUICKSLOT_COUNT"] = 0;
+            ["QUICKSLOT"] = qsSmallCache;
+            ["LABEL"] = overflowSmallCache;
+        };
+        [_LANG.MEDCACHE[SETTINGS.LANGUAGE]] = {
+            ["COUNT"] = 0;
+            ["PARTIAL"] = false;
+            ["QUICKSLOT_COUNT"] = 0;
+            ["QUICKSLOT"] = qsMedCache;
+            ["LABEL"] = overflowMedCache;
+        };
+        [_LANG.LARGECACHE[SETTINGS.LANGUAGE]] = {
+            ["COUNT"] = 0;
+            ["PARTIAL"] = false;
+            ["QUICKSLOT_COUNT"] = 0;
+            ["QUICKSLOT"] = qsLargeCache;
+            ["LABEL"] = overflowLargeCache;
+        };
+        [_LANG.HUGECACHE[SETTINGS.LANGUAGE]] = {
+            ["COUNT"] = 0;
+            ["PARTIAL"] = false;
+            ["QUICKSLOT_COUNT"] = 0;
+            ["QUICKSLOT"] = qsHugeCache;
+            ["LABEL"] = overflowHugeCache;
+        };
+    };
 
     -- quickslots always prefer partial stacks over full stacks, but between partials, user can control which populates quickslot, by rearranging in bags
     -- not all of the full-stack cases have been validated for caches, due to daunting test prereqs. Over 50 huge caches (gulp!)
-
-	local PARTIALCAVECLAWSTACK = false;
-	local PARTIALDOWSINGSTACK = false;
-	local PARTIALPICKSTACK = false;
-	local PARTIALSMALLCACHESTACK = false;
-	local PARTIALMEDIUMCACHESTACK = false;
-	local PARTIALLARGECACHESTACK = false;
-
-	local CAVECLAWSINQUICKSLOT = 0;
-	local DOWSINGINQUICKSLOT = 0;
-	local PICKSINQUICKSLOT = 0;
-	local SMALLCACHESINQUICKSLOT = 0;
-	local MEDCACHESINQUICKSLOT = 0;
-	local LARGECACHESINQUICKSLOT = 0;
-	local HUGECACHESINQUICKSLOT = 0;
-
 
 	for i=1, BAGSIZE do
 		if MYBAGS:GetItem(i) ~= nil then
@@ -311,140 +338,28 @@ function LocateItems()
             -- We need to pay attention to item.QuantityChanged.
             -- If we don't, then merging partial stacks or overflowing a full stack can produce inaccurate counts.
 
-			if CURNAME == _LANG.CAVECLAW[SETTINGS.LANGUAGE] then
+            -- If this is one of the Treasure Hunt items in our quickslots:
+            if (variables[CURNAME]) then
 				local THISSTACKSIZE = CURITEM:GetQuantity();
 				local NOTINSTACK;
 
-				CAVECLAWCOUNT = CAVECLAWCOUNT + THISSTACKSIZE;
+				variables[CURNAME].COUNT = variables[CURNAME].COUNT + THISSTACKSIZE;
 
-				if ((THISSTACKSIZE < CURITEM:GetMaxStackSize()) or (not PARTIALCAVECLAWSTACK)) then
-					qsCaveClaws:SetItem(CURITEM);
+				if ((THISSTACKSIZE < CURITEM:GetMaxStackSize()) or (not variables[CURNAME].PARTIAL)) then
+					variables[CURNAME].QUICKSLOT:SetItem(CURITEM);
 					if (THISSTACKSIZE < CURITEM:GetMaxStackSize()) then
-						PARTIALCAVECLAWSTACK = true;
+						variables[CURNAME].PARTIAL = true;
 					end
-					CAVECLAWSINQUICKSLOT = THISSTACKSIZE;
+					variables[CURNAME].QUICKSLOT_COUNT = THISSTACKSIZE;
 				end
-				NOTINSTACK = CAVECLAWCOUNT - CAVECLAWSINQUICKSLOT;
-				SetOverflowText(overflowcaveclaws, NOTINSTACK);
+				NOTINSTACK = variables[CURNAME].COUNT - variables[CURNAME].QUICKSLOT_COUNT;
+				SetOverflowText(variables[CURNAME].LABEL, NOTINSTACK);
 
 				CURITEM.QuantityChanged = CURITEM.QuantityChanged or function (sender, args)
 					LocateItems();
 				end
 			end
 
-			if CURNAME == _LANG.DOWSING[SETTINGS.LANGUAGE] then
-				local THISSTACKSIZE = CURITEM:GetQuantity();
-				local NOTINSTACK;
-
-				DOWSINGCOUNT = DOWSINGCOUNT + THISSTACKSIZE;
-
-				if ((THISSTACKSIZE < CURITEM:GetMaxStackSize()) or (not PARTIALDOWSINGSTACK)) then
-					qsDowsing:SetItem(CURITEM);
-					if (THISSTACKSIZE < CURITEM:GetMaxStackSize()) then
-						PARTIALDOWSINGSTACK = true;
-					end
-					DOWSINGINQUICKSLOT = THISSTACKSIZE;
-				end
-				NOTINSTACK = DOWSINGCOUNT - DOWSINGINQUICKSLOT;
-				SetOverflowText(overflowDowsing, NOTINSTACK);
-
-				CURITEM.QuantityChanged = CURITEM.QuantityChanged or function (sender, args)
-					LocateItems();
-				end
-			end
-
-			if CURNAME == _LANG.PICK[SETTINGS.LANGUAGE] then
-				local THISSTACKSIZE = CURITEM:GetQuantity();
-				local NOTINSTACK;
-
-				PICKCOUNT = PICKCOUNT + THISSTACKSIZE;
-
-				if ((THISSTACKSIZE < CURITEM:GetMaxStackSize()) or (not PARTIALPICKSTACK)) then
-					qsPicks:SetItem(CURITEM);
-					if (THISSTACKSIZE < CURITEM:GetMaxStackSize()) then
-						PARTIALPICKSTACK = true;
-					end
-					PICKSINQUICKSLOT = THISSTACKSIZE;
-				end
-				NOTINSTACK = PICKCOUNT - PICKSINQUICKSLOT;
-				SetOverflowText(overflowPicks, NOTINSTACK);
-
-				CURITEM.QuantityChanged = CURITEM.QuantityChanged or function (sender, args)
-					LocateItems();
-				end
-			end
-
-			if CURNAME == _LANG.SMALLCACHE[SETTINGS.LANGUAGE] then
-				local THISSTACKSIZE = CURITEM:GetQuantity();
-				SMALLCACHECOUNT = SMALLCACHECOUNT + THISSTACKSIZE;
-				if ((THISSTACKSIZE < CURITEM:GetMaxStackSize()) or (not PARTIALSMALLCACHESTACK)) then
-					qsSmallCache:SetItem(CURITEM);
-					if (THISSTACKSIZE < CURITEM:GetMaxStackSize()) then
-						PARTIALSMALLCACHESTACK = true;
-					end
-					SMALLCACHESINQUICKSLOT = THISSTACKSIZE;
-				end
-				NOTINSTACK = SMALLCACHECOUNT - SMALLCACHESINQUICKSLOT;
-				SetOverflowText(overflowSmallCache, NOTINSTACK);
-
-				CURITEM.QuantityChanged = CURITEM.QuantityChanged or function (sender, args)
-					LocateItems();
-				end
-			end
-
-			if CURNAME == _LANG.MEDCACHE[SETTINGS.LANGUAGE] then
-				local THISSTACKSIZE = CURITEM:GetQuantity();
-				MEDIUMCACHECOUNT = MEDIUMCACHECOUNT + THISSTACKSIZE;
-				if ((THISSTACKSIZE < CURITEM:GetMaxStackSize()) or (not PARTIALMEDIUMCACHESTACK)) then
-					qsMedCache:SetItem(CURITEM);
-					if (THISSTACKSIZE < CURITEM:GetMaxStackSize()) then
-						PARTIALMEDIUMCACHESTACK = true;
-					end
-					MEDCACHESINQUICKSLOT = THISSTACKSIZE;
-				end
-				NOTINSTACK = MEDIUMCACHECOUNT - MEDCACHESINQUICKSLOT;
-				SetOverflowText(overflowMedCache, NOTINSTACK);
-
-				CURITEM.QuantityChanged = CURITEM.QuantityChanged or function (sender, args)
-					LocateItems();
-				end
-			end
-
-			if CURNAME == _LANG.LARGECACHE[SETTINGS.LANGUAGE] then
-				local THISSTACKSIZE = CURITEM:GetQuantity();
-				LARGECACHECOUNT = LARGECACHECOUNT + THISSTACKSIZE;
-				if ((THISSTACKSIZE < CURITEM:GetMaxStackSize()) or (not PARTIALLARGECACHESTACK)) then
-					qsLargeCache:SetItem(CURITEM);
-					if (THISSTACKSIZE < CURITEM:GetMaxStackSize()) then
-						PARTIALLARGECACHESTACK = true;
-					end
-					LARGECACHESINQUICKSLOT = THISSTACKSIZE;
-				end
-				NOTINSTACK = LARGECACHECOUNT - LARGECACHESINQUICKSLOT;
-				SetOverflowText(overflowLargeCache, NOTINSTACK);
-
-				CURITEM.QuantityChanged = CURITEM.QuantityChanged or function (sender, args)
-					LocateItems();
-				end
-			end
-
-			if CURNAME == _LANG.HUGECACHE[SETTINGS.LANGUAGE] then
-				local THISSTACKSIZE = CURITEM:GetQuantity();
-				HUGECACHECOUNT = HUGECACHECOUNT + THISSTACKSIZE;
-				if ((THISSTACKSIZE < CURITEM:GetMaxStackSize()) or (not PARTIALHUGECACHESTACK)) then
-					qsHugeCache:SetItem(CURITEM);
-					if (THISSTACKSIZE < CURITEM:GetMaxStackSize()) then
-						PARTIALHUGECACHESTACK = true;
-					end
-					HUGECACHESINQUICKSLOT = THISSTACKSIZE;
-				end
-				NOTINSTACK = HUGECACHECOUNT - HUGECACHESINQUICKSLOT;
-				SetOverflowText(overflowHugeCache, NOTINSTACK);
-
-				CURITEM.QuantityChanged = CURITEM.QuantityChanged or function (sender, args)
-					LocateItems();
-				end
-			end
 		end
 	end
 
