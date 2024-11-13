@@ -152,4 +152,24 @@ _LANG =
 		};
 	};
 
-
+function GetString(table, language)
+    if (type(table) == "table") then
+        if (language == nil or
+            language == "") then
+            language = CLIENTLANG;
+        end
+        if (table[language] ~= nil) then
+            return table[language];
+        end
+        if (table["ENGLISH"]) then
+            return table["ENGLISH"];
+        end
+        return "";
+    elseif (type(table) == "nil") then
+        -- Nothing to check
+        return "";
+    else
+        -- Not a table
+        return table;
+    end
+end
