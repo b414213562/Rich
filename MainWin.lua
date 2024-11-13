@@ -290,7 +290,7 @@ function LocateItems()
 	local PARTIALDOWSINGSTACK = false;
 	local PARTIALPICKSTACK = false;
 	local PARTIALSMALLCACHESTACK = false;
-	local PARTIALMEDCACHESTACK = false;
+	local PARTIALMEDIUMCACHESTACK = false;
 	local PARTIALLARGECACHESTACK = false;
 
 	local CAVECLAWSINQUICKSLOT = 0;
