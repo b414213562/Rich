@@ -138,7 +138,6 @@ end
 -- Default Settings
 DEFAULT_SETTINGS =
 	{
-	["LANGUAGE"] = CLIENTLANG;
 	["MSGCOLOR"] = "FFFFFF";
     ["EVENTSTART"] = 0;
 

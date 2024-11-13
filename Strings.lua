@@ -3,7 +3,7 @@
 -- French translations provided by Galphoglas
 
 
--- E.G -- wBListParent:SetText(_LANG.BListWindowTitle[SETTINGS.LANGUAGE]);
+-- E.G -- wBListParent:SetText(_LANG.BListWindowTitle[CLIENTLANG]);
 
 _LANG =
 	{

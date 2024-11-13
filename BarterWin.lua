@@ -5,7 +5,7 @@ function DrawBarterWin()
 	wBarterWinParent:SetSize(480,500);
 	wBarterWinParent:SetPosition(SETTINGS.BARTERWIN.X,SETTINGS.BARTERWIN.Y);
 	wBarterWinParent:SetVisible(false);
-	wBarterWinParent:SetText(_LANG.BARTERITEMS[SETTINGS.LANGUAGE]);
+	wBarterWinParent:SetText(_LANG.BARTERITEMS[CLIENTLANG]);
 
 	wBarterWinBack = Turbine.UI.Control();
 	wBarterWinBack:SetParent(wBarterWinParent);
@@ -22,7 +22,7 @@ function DrawBarterWin()
 	lblBarterFestival:SetTextAlignment(Turbine.UI.ContentAlignment.MiddleCenter);
 	lblBarterFestival:SetFont(Turbine.UI.Lotro.Font.TrajanPro16);
 	lblBarterFestival:SetForeColor(YELLOW);
-	lblBarterFestival:SetText(_LANG.TREASUREHUNT[SETTINGS.LANGUAGE]);
+	lblBarterFestival:SetText(_LANG.TREASUREHUNT[CLIENTLANG]);
 	--lblBarterFestival:SetBackColor(Turbine.UI.Color.White);
 
 	lstBarterItems = Turbine.UI.ListBox();

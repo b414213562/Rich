@@ -74,6 +74,8 @@ function loadData()
     end
     if SETTINGS.EVENTSTART > 0 then ROUNDACTIVE = true; end
 
+    -- 2024-11-13 no longer storing LANGUAGE in settings:
+    SETTINGS.LANGUAGE = nil;
 
 	-- STATS ---------------------------------------------------------------------------------------
 	local SavedStats = {};

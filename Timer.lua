@@ -52,7 +52,7 @@ function UpdateLabels()
 	if ROUNDACTIVE == true then
 		lblRoundDuration:SetText(FormatTime(CURTIME-SETTINGS.EVENTSTART));
 	else
-		lblRoundDuration:SetText(_LANG.WAITINGROUND[SETTINGS.LANGUAGE]);
+		lblRoundDuration:SetText(_LANG.WAITINGROUND[CLIENTLANG]);
 	end
 
 
@@ -61,7 +61,7 @@ function UpdateLabels()
 		if CURQUESTTIME > 0 then
 			lblCDTH:SetText(FormatTime(CURQUESTTIME));
 		else
-			lblCDTH:SetText(_LANG.QUESTRESET[SETTINGS.LANGUAGE]);
+			lblCDTH:SetText(_LANG.QUESTRESET[CLIENTLANG]);
 		end
 	end
 
@@ -71,7 +71,7 @@ function UpdateLabels()
 		if CURQUESTTIME > 0 then
 			lblCDBERRY:SetText(FormatTime(CURQUESTTIME));
 		else
-			lblCDBERRY:SetText(_LANG.QUESTRESET[SETTINGS.LANGUAGE]);
+			lblCDBERRY:SetText(_LANG.QUESTRESET[CLIENTLANG]);
 		end
 	end
 end

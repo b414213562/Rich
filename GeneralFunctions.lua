@@ -109,24 +109,6 @@ function GetItemFromID(itemID)
 end
 --Turbine.Shell.WriteLine(GetItemFromID(1879230113):GetItemInfo():GetName()); -- Crumpet
 
-
--- This function gets the client language and returns the string value, as used in string tables.
-function GetClientLanguage()
-
-	local LANGUAGE = 1;
-
-	if Turbine.Engine.GetLanguage() == Turbine.Language.French then
-		LANGUAGE = 2;
-	elseif Turbine.Engine.GetLanguage() == Turbine.Language.German then
-		LANGUAGE = 3;
-	elseif Turbine.Engine.GetLanguage() == Turbine.Language.Russian then
-		LANGUAGE = 4;
-	end
-
-	return LANGUAGE; -- 1=English	2=French	3=German	4=Russian
-end
-
-
 -- This function formats a number with commas
 function comma_value(amount)
   local formatted = amount

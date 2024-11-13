@@ -26,7 +26,7 @@ function DrawMainWindow()
 	btnBarter:SetParent(wMainWinParent);
 	btnBarter:SetWidth(70);
 	btnBarter:SetPosition((tempWidth/2)-(btnBarter:GetWidth()+5),tempHeight-40);
-	btnBarter:SetText(_LANG.BARTER[SETTINGS.LANGUAGE]);
+	btnBarter:SetText(_LANG.BARTER[CLIENTLANG]);
 
 	btnBarter.Click = function ()
 		if wBarterWinParent == nil then DrawBarterWin() end;
@@ -38,7 +38,7 @@ function DrawMainWindow()
 	btnStats:SetParent(wMainWinParent);
 	btnStats:SetWidth(70);
 	btnStats:SetPosition((tempWidth/2)+5,tempHeight-40);
-	btnStats:SetText(_LANG.STATS[SETTINGS.LANGUAGE]);
+	btnStats:SetText(_LANG.STATS[CLIENTLANG]);
 
 	btnStats.Click = function (sender, args)
 		SETTINGS.STATWIN.VISIBLE = true;
@@ -53,7 +53,7 @@ function DrawMainWindow()
 	lbltitleDuration:SetPosition(10,50);
 	lbltitleDuration:SetFont(BFONT);
 	lbltitleDuration:SetForeColor(YELLOW);
-	lbltitleDuration:SetText(_LANG.DURATION[SETTINGS.LANGUAGE]);
+	lbltitleDuration:SetText(_LANG.DURATION[CLIENTLANG]);
 
 	lblRoundDuration = Turbine.UI.Label();
 	lblRoundDuration:SetParent(wMainWinParent);
@@ -68,7 +68,7 @@ function DrawMainWindow()
 	lbltitleQstTH:SetPosition(10,100);
 	lbltitleQstTH:SetFont(BFONT);
 	lbltitleQstTH:SetForeColor(YELLOW);
-	lbltitleQstTH:SetText(_LANG.THRESET[SETTINGS.LANGUAGE]);
+	lbltitleQstTH:SetText(_LANG.THRESET[CLIENTLANG]);
 
 	lblCDTH = Turbine.UI.Label();
 	lblCDTH:SetParent(wMainWinParent);
@@ -79,7 +79,7 @@ function DrawMainWindow()
 	local CURTIME = Turbine.Engine.GetLocalTime();
 	if CURTIME > STATS[MYNAME].QUESTTHEXP then
 		-- Quest has cooled-down
-		lblCDTH:SetText(_LANG.QUESTRESET[SETTINGS.LANGUAGE]);
+		lblCDTH:SetText(_LANG.QUESTRESET[CLIENTLANG]);
 	else
 		QUESTTH = STATS[MYNAME].QUESTTHEXP;
 		QUESTTHCOMPLETE = true;
@@ -91,7 +91,7 @@ function DrawMainWindow()
 	lbltitleQstBER:SetPosition(10,150);
 	lbltitleQstBER:SetFont(BFONT);
 	lbltitleQstBER:SetForeColor(YELLOW);
-	lbltitleQstBER:SetText(_LANG.BERRESET[SETTINGS.LANGUAGE]);
+	lbltitleQstBER:SetText(_LANG.BERRESET[CLIENTLANG]);
 
 	lblCDBERRY = Turbine.UI.Label();
 	lblCDBERRY:SetParent(wMainWinParent);
@@ -101,7 +101,7 @@ function DrawMainWindow()
 
 	if CURTIME > STATS[MYNAME].QUESTBEREXP then
 		-- Quest has cooled-down
-		lblCDBERRY:SetText(_LANG.QUESTRESET[SETTINGS.LANGUAGE]);
+		lblCDBERRY:SetText(_LANG.QUESTRESET[CLIENTLANG]);
 	else
 		QUESTBER = STATS[MYNAME].QUESTBEREXP;
 		QUESTBERCOMPLETE = true;
@@ -421,7 +421,7 @@ function GetTokenIndex()
 	TOKENINDEX = 0;
 
 	for i=1, MYWALLET:GetSize() do
-		if MYWALLET:GetItem(i):GetName() == _LANG.TOKENS[SETTINGS.LANGUAGE] then
+		if MYWALLET:GetItem(i):GetName() == _LANG.TOKENS[CLIENTLANG] then
 			TOKENINDEX = i;
 			TOKENOLDCOUNT = MYWALLET:GetItem(TOKENINDEX):GetQuantity();
 
