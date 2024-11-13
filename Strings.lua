@@ -1,5 +1,5 @@
 
--- German translations provided by Venogorn
+-- German translations provided by Venogorn and Nadia
 
 
 -- E.G -- wBListParent:SetText(_LANG.BListWindowTitle[SETTINGS.LANGUAGE]);
@@ -11,7 +11,7 @@ _LANG =
 
 	["STATS"] = 		{["ENGLISH"] = "Stats";						["FRENCH"] = "Stats";						["GERMAN"] = "Stats";						["RUSSIAN"] = "Stats";};
 	["COMPLETED"] = 	{["ENGLISH"] = "Completed:";				["FRENCH"] = "Completed:";					["GERMAN"] = "Abgeschlossen:";				["RUSSIAN"] = "Completed:";};
-	["WAITINGROUND"] = 	{["ENGLISH"] = "Waiting for new round";		["FRENCH"] = "Waiting for new round";		["GERMAN"] = "Warte auf neue Runde";		["RUSSIAN"] = "Waiting for new round";};
+	["WAITINGROUND"] = 	{["ENGLISH"] = "Waiting for new round";		["FRENCH"] = "Waiting for new round";		["GERMAN"] = "Auf neue Runde warten";		["RUSSIAN"] = "Waiting for new round";};
 	["QUESTRESET"] = 	{["ENGLISH"] = "Quest reset";				["FRENCH"] = "Quest reset";					["GERMAN"] = "Quest verfügbar";				["RUSSIAN"] = "Quest reset";};
 	["BARTER"] = 		{["ENGLISH"] = "Barter";					["FRENCH"] = "Barter";						["GERMAN"] = "Barter";						["RUSSIAN"] = "Barter";};
 	["START"] = 		{["ENGLISH"] = "Start";						["FRENCH"] = "Start";						["GERMAN"] = "Start";						["RUSSIAN"] = "Start";};
@@ -20,8 +20,8 @@ _LANG =
 	["DURATION"] = 		{["ENGLISH"] = "Current Round";				["FRENCH"] = "Current Round";				["GERMAN"] = "Aktuelle Runde";				["RUSSIAN"] = "Current Round";};
 	["INPROGRESS"] = 	{["ENGLISH"] = "In progress";				["FRENCH"] = "In progress";					["GERMAN"] = "ist aktiv";					["RUSSIAN"] = "In progress";};
 	["ACQUIRED"] = 		{["ENGLISH"] = "You have acquired";			["FRENCH"] = "You have acquired";			["GERMAN"] = "Erhalten:";					["RUSSIAN"] = "You have acquired";};
-	["BARTERITEMS"] = 	{["ENGLISH"] = "Barter Items";				["FRENCH"] = "Barter Items";				["GERMAN"] = "Barter Items";				["RUSSIAN"] = "Barter Items";};
-	["TREASUREHUNT"] =	{["ENGLISH"] = "Treasure Hunt";				["FRENCH"] = "Treasure Hunt";				["GERMAN"] = "Treasure Hunt";				["RUSSIAN"] = "Treasure Hunt";};
+	["BARTERITEMS"] = 	{["ENGLISH"] = "Barter Items";				["FRENCH"] = "Barter Items";				["GERMAN"] = "Händler-Gegenstände";			["RUSSIAN"] = "Barter Items";};
+	["TREASUREHUNT"] =	{["ENGLISH"] = "Treasure Hunt";				["FRENCH"] = "Treasure Hunt";				["GERMAN"] = "Schatzsuche";					["RUSSIAN"] = "Treasure Hunt";};
 
 
 	["CAVECLAW"] = 	{ -- STANDARD
@@ -132,22 +132,22 @@ _LANG =
 
 
 	["STATLBLS"] = {
-		[0] = {["LINK"] = "TOTALROUNDS"; 	["ENGLISH"] = "Total Rounds";			["FRENCH"] = "Total Rounds";		["GERMAN"] = "Total Rounds";			["RUSSIAN"] = "Total Rounds";};
-		[1] = {["LINK"] = "SHORTESTROUND"; 	["ENGLISH"] = "Shortest Round";			["FRENCH"] = "Shortest Round";		["GERMAN"] = "Shortest Round";			["RUSSIAN"] = "Shortest Round";};
-		[2] = {["LINK"] = "LONGESTROUND"; 	["ENGLISH"] = "Longest Round";			["FRENCH"] = "Longest Round";		["GERMAN"] = "Longest Round";			["RUSSIAN"] = "Longest Round";};
-		[3] = {["LINK"] = "TOTALTIME"; 		["ENGLISH"] = "Total Time";				["FRENCH"] = "Total Time";			["GERMAN"] = "Total Time";				["RUSSIAN"] = "Total Time";};
-		[4] = {["LINK"] = "TOTALTOKENS"; 	["ENGLISH"] = "Tokens Earned";			["FRENCH"] = "Tokens Earned";		["GERMAN"] = "Tokens Earned";			["RUSSIAN"] = "Tokens Earned";};
-		[5] = {["LINK"] = "TOTALSPENT"; 	["ENGLISH"] = "Tokens Spent";			["FRENCH"] = "Tokens Spent";		["GERMAN"] = "Tokens Spent";			["RUSSIAN"] = "Tokens Spent";};
-		[6] = {["LINK"] = "TOTALSMALL"; 	["ENGLISH"] = "Total Small Chests";		["FRENCH"] = "Total Small Chests";	["GERMAN"] = "Total Small Chests";		["RUSSIAN"] = "Total Small Chests";};
-		[7] = {["LINK"] = "TOTALMEDIUM"; 	["ENGLISH"] = "Total Medium Chests";	["FRENCH"] = "Total Medium Chests";	["GERMAN"] = "Total Medium Chests";		["RUSSIAN"] = "Total Medium Chests";};
-		[8] = {["LINK"] = "TOTALLARGE"; 	["ENGLISH"] = "Total Large Chests";		["FRENCH"] = "Total Large Chests";	["GERMAN"] = "Total Large Chests";		["RUSSIAN"] = "Total Large Chests";};
-		[9] = {["LINK"] = "TOTALHUGE"; 		["ENGLISH"] = "Total Huge Chests";		["FRENCH"] = "Total Huge Chests";	["GERMAN"] = "Total Huge Chests";		["RUSSIAN"] = "Total Huge Chests";};
+		[0] = {["LINK"] = "TOTALROUNDS"; 	["ENGLISH"] = "Total Rounds";			["FRENCH"] = "Total Rounds";		["GERMAN"] = "Gesamtrunden";					["RUSSIAN"] = "Total Rounds";};
+		[1] = {["LINK"] = "SHORTESTROUND"; 	["ENGLISH"] = "Shortest Round";			["FRENCH"] = "Shortest Round";		["GERMAN"] = "Kürzeste Runde";					["RUSSIAN"] = "Shortest Round";};
+		[2] = {["LINK"] = "LONGESTROUND"; 	["ENGLISH"] = "Longest Round";			["FRENCH"] = "Longest Round";		["GERMAN"] = "Längste Runde";					["RUSSIAN"] = "Longest Round";};
+		[3] = {["LINK"] = "TOTALTIME"; 		["ENGLISH"] = "Total Time";				["FRENCH"] = "Total Time";			["GERMAN"] = "Gesamtzeit";						["RUSSIAN"] = "Total Time";};
+		[4] = {["LINK"] = "TOTALTOKENS"; 	["ENGLISH"] = "Tokens Earned";			["FRENCH"] = "Tokens Earned";		["GERMAN"] = "Münzen erhalten";					["RUSSIAN"] = "Tokens Earned";};
+		[5] = {["LINK"] = "TOTALSPENT"; 	["ENGLISH"] = "Tokens Spent";			["FRENCH"] = "Tokens Spent";		["GERMAN"] = "Münzen ausgegeben";				["RUSSIAN"] = "Tokens Spent";};
+		[6] = {["LINK"] = "TOTALSMALL"; 	["ENGLISH"] = "Total Small Chests";		["FRENCH"] = "Total Small Chests";	["GERMAN"] = "Kleine Schatzspeicher gesamt";	["RUSSIAN"] = "Total Small Chests";};
+		[7] = {["LINK"] = "TOTALMEDIUM"; 	["ENGLISH"] = "Total Medium Chests";	["FRENCH"] = "Total Medium Chests";	["GERMAN"] = "Mittlere Schatzspeicher gesamt";	["RUSSIAN"] = "Total Medium Chests";};
+		[8] = {["LINK"] = "TOTALLARGE"; 	["ENGLISH"] = "Total Large Chests";		["FRENCH"] = "Total Large Chests";	["GERMAN"] = "Große Schatzspeicher gesamt";		["RUSSIAN"] = "Total Large Chests";};
+		[9] = {["LINK"] = "TOTALHUGE"; 		["ENGLISH"] = "Total Huge Chests";		["FRENCH"] = "Total Huge Chests";	["GERMAN"] = "Riesige Schatzspeicher gesamt";	["RUSSIAN"] = "Total Huge Chests";};
 		};
 
 	["STATHEADS"] = {
-		[0] = {["ENGLISH"] = "Stat";					["FRENCH"] = "Stat"; 					["GERMAN"] = "Stat";					["RUSSIAN"] = "Stat";};
-		[1] = {["ENGLISH"] = "Selected Character";		["FRENCH"] = "Selected Character"; 		["GERMAN"] = "Selected Character";		["RUSSIAN"] = "Selected Character";};
-		[2] = {["ENGLISH"] = "All Characters";			["FRENCH"] = "All Characters"; 			["GERMAN"] = "All Characters";			["RUSSIAN"] = "All Characters";};
+		[0] = {["ENGLISH"] = "Stat";					["FRENCH"] = "Stat"; 					["GERMAN"] = "Statistiken";				["RUSSIAN"] = "Stat";};
+		[1] = {["ENGLISH"] = "Selected Character";		["FRENCH"] = "Selected Character"; 		["GERMAN"] = "Ausgewählter Charakter";	["RUSSIAN"] = "Selected Character";};
+		[2] = {["ENGLISH"] = "All Characters";			["FRENCH"] = "All Characters"; 			["GERMAN"] = "Alle Charakter";			["RUSSIAN"] = "All Characters";};
 		};
 	};
 
