@@ -12,7 +12,7 @@ function DrawBarterWin()
 	wBarterWinBack:SetSize(480,500);
 	wBarterWinBack:SetPosition(1,-2);
 	wBarterWinBack:SetBackground(_IMAGES.BARTERBACK);
-	wBarterWinBack:SetBlendMode(4);
+	wBarterWinBack:SetBlendMode(Turbine.UI.BlendMode.AlphaBlend);
 	wBarterWinBack:SetMouseVisible(false);
 
 	lblBarterFestival = Turbine.UI.Label();
@@ -88,7 +88,7 @@ function RefreshBarterList()
             ROWBACK:SetParent(ROWHOLDER);
             ROWBACK:SetSize(ROWWIDTH,ROWHEIGHT-5);
             ROWBACK:SetBackground(_IMAGES.BARTERITEMSBACK);
-            ROWBACK:SetBlendMode(4);
+            ROWBACK:SetBlendMode(Turbine.UI.BlendMode.AlphaBlend);
 
             local item = 0;
             if type(v[1]) == 'string' then
