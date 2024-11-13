@@ -4,6 +4,10 @@ import "Turbine.Gameplay";
 import "Turbine.UI";
 import "Turbine.UI.Lotro";
 
+-- Libraries..
+import "GaluhadPlugins.Rich.TurbineFiles.CallBack";
+import "GaluhadPlugins.Rich.TurbineFiles.Class";
+
 -- Plugin Imports..
 import "GaluhadPlugins.Rich.Globals";
 import "GaluhadPlugins.Rich.DropDown";
