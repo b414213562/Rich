@@ -1,5 +1,5 @@
 
--- German translations provided by Venogorn and Nadia
+-- German translations provided by Venogorn, Nadia, and Talyrion
 -- French translations provided by Galphoglas
 
 
@@ -16,8 +16,8 @@ _LANG =
 	["QUESTRESET"] = 	{["ENGLISH"] = "Quest reset";				["FRENCH"] = "Quête réinitialisée";					["GERMAN"] = "Quest verfügbar";				["RUSSIAN"] = "Quest reset";};
 	["BARTER"] = 		{["ENGLISH"] = "Barter";					["FRENCH"] = "Echange";						["GERMAN"] = "Barter";						["RUSSIAN"] = "Barter";};
 	["START"] = 		{["ENGLISH"] = "Start";						["FRENCH"] = "Start";						["GERMAN"] = "Start";						["RUSSIAN"] = "Start";};
-	["THRESET"] = 		{["ENGLISH"] = "Quest: Treasure Hunt";		["FRENCH"] = "Quête: Chasse au trésor";		["GERMAN"] = "Quest: Schatzsuche";			["RUSSIAN"] = "Quest: Treasure Hunt";};
-	["BERRESET"] = 		{["ENGLISH"] = "Quest: Berries";			["FRENCH"] = "Quête: Baies";				["GERMAN"] = "Quest: Beeren";				["RUSSIAN"] = "Quest: Berries";};
+	["THRESET"] = 		{["ENGLISH"] = "Quest: Treasure Hunt";		["FRENCH"] = "Quête: Chasse au trésor";		["GERMAN"] = "Aufgabe: Schatzsuche";			["RUSSIAN"] = "Quest: Treasure Hunt";};
+	["BERRESET"] = 		{["ENGLISH"] = "Quest: Berries";			["FRENCH"] = "Quête: Baies";				["GERMAN"] = "Aufgabe: Beeren";				["RUSSIAN"] = "Quest: Berries";};
 	["DURATION"] = 		{["ENGLISH"] = "Current Round";				["FRENCH"] = "Manche actuelle";				["GERMAN"] = "Aktuelle Runde";				["RUSSIAN"] = "Current Round";};
 	["INPROGRESS"] = 	{["ENGLISH"] = "In progress";				["FRENCH"] = "En cour";					["GERMAN"] = "ist aktiv";					["RUSSIAN"] = "In progress";};
 	["ACQUIRED"] = 		{["ENGLISH"] = "You have acquired";			["FRENCH"] = "Vous avez obtenu";			["GERMAN"] = "Erhalten:";					["RUSSIAN"] = "You have acquired";};
