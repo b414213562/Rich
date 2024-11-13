@@ -308,6 +308,9 @@ function LocateItems()
 			local CURITEM = MYBAGS:GetItem(i);
 			local CURNAME = CURITEM:GetName();
 
+            -- We need to pay attention to item.QuantityChanged.
+            -- If we don't, then merging partial stacks or overflowing a full stack can produce inaccurate counts.
+
 			if CURNAME == _LANG.CAVECLAW[SETTINGS.LANGUAGE] then
 				local THISSTACKSIZE = CURITEM:GetQuantity();
 				local NOTINSTACK;
@@ -323,8 +326,6 @@ function LocateItems()
 				end
 				NOTINSTACK = CAVECLAWCOUNT - CAVECLAWSINQUICKSLOT;
 				SetOverflowText(overflowcaveclaws, NOTINSTACK);
-				
--- need to fire on QuantityChanged events, otherwise merging partial stacks and overflowing a full stack, can produce inaccurate counts
 
 				CURITEM.QuantityChanged = CURITEM.QuantityChanged or function (sender, args)
 					LocateItems();
