@@ -332,30 +332,29 @@ function LocateItems()
 	for i=1, BAGSIZE do
 		if MYBAGS:GetItem(i) ~= nil then
 
-			local CURITEM = MYBAGS:GetItem(i);
-			local CURNAME = CURITEM:GetName();
+			local currentItem = MYBAGS:GetItem(i);
+			local currentName = currentItem:GetName();
 
             -- We need to pay attention to item.QuantityChanged.
             -- If we don't, then merging partial stacks or overflowing a full stack can produce inaccurate counts.
 
             -- If this is one of the Treasure Hunt items in our quickslots:
-            if (variables[CURNAME]) then
-				local THISSTACKSIZE = CURITEM:GetQuantity();
-				local NOTINSTACK;
+            if (variables[currentName]) then
+				local quantity = currentItem:GetQuantity();
 
-				variables[CURNAME].COUNT = variables[CURNAME].COUNT + THISSTACKSIZE;
+				variables[currentName].COUNT = variables[currentName].COUNT + quantity;
 
-				if ((THISSTACKSIZE < CURITEM:GetMaxStackSize()) or (not variables[CURNAME].PARTIAL)) then
-					variables[CURNAME].QUICKSLOT:SetItem(CURITEM);
-					if (THISSTACKSIZE < CURITEM:GetMaxStackSize()) then
-						variables[CURNAME].PARTIAL = true;
+				if ((quantity < currentItem:GetMaxStackSize()) or (not variables[currentName].PARTIAL)) then
+					variables[currentName].QUICKSLOT:SetItem(currentItem);
+					if (quantity < currentItem:GetMaxStackSize()) then
+						variables[currentName].PARTIAL = true;
 					end
-					variables[CURNAME].QUICKSLOT_COUNT = THISSTACKSIZE;
+					variables[currentName].QUICKSLOT_COUNT = quantity;
 				end
-				NOTINSTACK = variables[CURNAME].COUNT - variables[CURNAME].QUICKSLOT_COUNT;
-				SetOverflowText(variables[CURNAME].LABEL, NOTINSTACK);
+				local quantityNotInStack = variables[currentName].COUNT - variables[currentName].QUICKSLOT_COUNT;
+				SetOverflowText(variables[currentName].LABEL, quantityNotInStack);
 
-				CURITEM.QuantityChanged = CURITEM.QuantityChanged or function (sender, args)
+				currentItem.QuantityChanged = currentItem.QuantityChanged or function (sender, args)
 					LocateItems();
 				end
 			end
