@@ -25,7 +25,7 @@ function DrawMainWindow()
 	btnBarter = Turbine.UI.Lotro.Button();
 	btnBarter:SetParent(wMainWinParent);
 	btnBarter:SetWidth(70);
-	btnBarter:SetPosition((tempWidth/2)-(btnBarter:GetWidth()+5),tempHeight-40);
+	btnBarter:SetPosition((tempWidth/2)-(btnBarter:GetWidth()+5),tempHeight-50);
 	btnBarter:SetText(_LANG.BARTER[CLIENTLANG]);
 
 	btnBarter.Click = function ()
@@ -37,7 +37,7 @@ function DrawMainWindow()
 	btnStats = Turbine.UI.Lotro.Button();
 	btnStats:SetParent(wMainWinParent);
 	btnStats:SetWidth(70);
-	btnStats:SetPosition((tempWidth/2)+5,tempHeight-40);
+	btnStats:SetPosition((tempWidth/2)+5,tempHeight-50);
 	btnStats:SetText(_LANG.STATS[CLIENTLANG]);
 
 	btnStats.Click = function (sender, args)
