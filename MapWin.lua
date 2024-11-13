@@ -310,6 +310,8 @@ function DrawMapWin()
         caveClawValueButton:SetWidth(100);
         caveClawValueButton:SetPosition(caveClawActivatedButton:GetWidth() + 10 + 105 * (key - 1), 30);
         caveClawValueButton.Click = function(sender, args)
+            if (#map.CaveClaws == 0) then return; end
+
             local caveClawCircle = map.CaveClaws[#map.CaveClaws];
             caveClawCircle:SetBackground(_IMAGES["CAVE_CLAW_CIRCLE_" .. value]);
 
