@@ -1,0 +1,3 @@
+Drono: 
+  it bothered me I couldnt click the buttons properly. Seems the culprit are overflowLabels.
+  also possible enhancment for the stats, only count the round if you used some of the items during it
